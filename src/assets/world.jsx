@@ -1,14 +1,10 @@
+// @ts-nocheck
 import React from "react";
 export function Map() {
   return (
     <svg
       className="map"
-      xmlns:mapsvg="http://mapsvg.com"
-      xmlns:dc="http://purl.org/dc/elements/1.1/"
-      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-      xmlns:svg="http://www.w3.org/2000/svg"
       xmlns="http://www.w3.org/2000/svg"
-      mapsvg:geoViewBox="-169.110266 83.600842 190.486279 -58.508473"
       width="100%"
       viewBox="0 0 1000 1000"
     >
