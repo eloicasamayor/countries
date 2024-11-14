@@ -12,11 +12,16 @@ function App() {
     }
   }, []);
 
-  function onClickPais(e) {
-    console.log(e.target.attributes.title.value);
-    e.target.setAttribute("style", "fill:red");
+  function onClickPais(e: PointerEvent) {
+    const targ = e.target as SVGPathElement;
+    const title = (targ.attributes.getNamedItem("title") as Attr).value;
 
-    setCountry(e.target.attributes.title.value);
+    if (!title || !targ) {
+      return;
+    }
+    console.log(title);
+    targ.setAttribute("style", "fill:red");
+    setCountry(title);
   }
   return (
     <>
