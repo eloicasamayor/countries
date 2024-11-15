@@ -9,10 +9,22 @@ function App() {
   type countryInfoT = {
     capital: string;
     languages: object;
+    flags: {
+      svg: string;
+    };
+    name: {
+      official: string;
+    };
   };
   const [countryInfo, setCountryInfo] = useState<countryInfoT>({
     capital: "",
     languages: {},
+    flags: {
+      svg: "",
+    },
+    name: {
+      official: "",
+    },
   });
 
   useEffect(() => {
@@ -51,17 +63,23 @@ function App() {
   }
   return (
     <>
-      <p>{country}</p>
       <Map />
-      <div>
-        <p>
-          <strong>Capital:</strong> {countryInfo?.capital}
-        </p>
-        <p>
-          <strong>Languages:</strong>{" "}
-          {Object.values(countryInfo?.languages).map((l) => l + ", ")}
-        </p>
-      </div>
+      {countryInfo && (
+        <div>
+          <h2>{country}</h2>
+          <p>
+            <strong>Official name:</strong> {countryInfo.name.official}
+          </p>
+          <p>
+            <strong>Capital:</strong> {countryInfo?.capital}
+          </p>
+          <p>
+            <strong>Languages:</strong>{" "}
+            {Object.values(countryInfo?.languages).map((l) => l + ", ")}
+          </p>
+          <img width={"100%"} src={countryInfo.flags.svg} />
+        </div>
+      )}
     </>
   );
 }
