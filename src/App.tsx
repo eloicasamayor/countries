@@ -65,19 +65,23 @@ function App() {
     <>
       <Map />
       {countryInfo && (
-        <div>
-          <h2>{country}</h2>
-          <p>
-            <strong>Official name:</strong> {countryInfo.name.official}
-          </p>
-          <p>
-            <strong>Capital:</strong> {countryInfo?.capital}
-          </p>
-          <p>
-            <strong>Languages:</strong>{" "}
-            {Object.values(countryInfo?.languages).map((l) => l + ", ")}
-          </p>
-          <img width={"100%"} src={countryInfo.flags.svg} />
+        <div id="country-info">
+          <div>
+            <h2>{country}</h2>{" "}
+            <img className="country-flag" src={countryInfo.flags.svg} />
+          </div>
+          <div>
+            <p>
+              <strong>Official name:</strong> {countryInfo.name.official}
+            </p>
+            <p>
+              <strong>Capital:</strong> {countryInfo?.capital}
+            </p>
+            <p>
+              <strong>Languages:</strong>{" "}
+              {Object.values(countryInfo?.languages).map((l) => l + ", ")}
+            </p>
+          </div>
         </div>
       )}
     </>

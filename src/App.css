@@ -1,7 +1,26 @@
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 #world {
   width: "100%";
 }
 
+#country-info {
+  display: flex;
+}
+
+.country-flag {
+  width: 8rem;
+}
+
 .map {
   width: "100%";
+}
+
+@media (min-width: 1250px) {
+  #root {
+    flex-direction: row;
+  }
 }
