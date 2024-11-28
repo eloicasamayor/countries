@@ -1,25 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 #root {
   display: flex;
   flex-direction: column;
 }
 
 #world {
-  width: "100%";
+  width: 100%;
 }
 
 #country-info {
   display: flex;
+  background-color: white;
+  z-index: 10;
 }
 
 .country-flag {
   width: 8rem;
 }
 
-.map {
+.map-container {
+  flex-grow: 1;
   width: "100%";
 }
 
+.map-box {
+  mask-clip: content-box;
+  height: 400px;
+  overflow: scroll;
+}
+
 @media (min-width: 1250px) {
+  #country-info {
+    width: 400px;
+  }
+  .map-box {
+    height: 100vh;
+  }
   #root {
     flex-direction: row;
   }
