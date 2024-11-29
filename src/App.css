@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#root {
+.app-page {
   display: flex;
   flex-direction: column;
 }
@@ -39,7 +39,7 @@ body {
   .map-box {
     height: 100vh;
   }
-  #root {
+  .app-page {
     flex-direction: row;
   }
 }
