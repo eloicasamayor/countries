@@ -1,5 +1,5 @@
 import { allCommonNames } from "../data/countries-data";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Map } from "../assets/Map";
 export const PointCountryGame = () => {
   const [countryIndex, setCountryIndex] = useState(0);
