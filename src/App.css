@@ -22,22 +22,12 @@ body {
 }
 
 .map-container {
-  flex-grow: 1;
-  width: "100%";
-}
-
-.map-box {
-  mask-clip: content-box;
-  height: 400px;
-  overflow: scroll;
+  height: 250px;
 }
 
 @media (min-width: 1250px) {
   #country-info {
     width: 400px;
-  }
-  .map-box {
-    height: 100vh;
   }
   .app-page {
     flex-direction: row;
