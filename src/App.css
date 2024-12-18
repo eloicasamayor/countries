@@ -21,8 +21,10 @@ body {
   width: 8rem;
 }
 
-.map-container {
-  height: 250px;
+.tools button {
+  height: 36px;
+  width: 36px;
+  margin: 10px;
 }
 
 @media (min-width: 1250px) {
