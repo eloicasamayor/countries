@@ -4,6 +4,7 @@ import {
   TransformWrapper,
   TransformComponent,
   useControls,
+  useTransformContext,
 } from "react-zoom-pan-pinch";
 import { MapControls } from "../components/MapControls";
 
@@ -12,10 +13,18 @@ export const Map = ({
 }: {
   onPathClick: (e: MouseEvent) => void;
 }) => {
-  const [strokeWidth, setStrokeWidth] = useState(0.5);
+  const [strokeWidth, setStrokeWidth] = useState(10);
+  const onZoom = (a, b) => {
+    console.log(a.state);
+    const maxStroke = 1; // Valor màxim del strokeWidth (escala 1)
+    const minStroke = 0.1; // Valor mínim del strokeWidth (escala 10)
+    const newStrokeWidth =
+      maxStroke - (a.state.scale - 1) * ((maxStroke - minStroke) / 29);
+    setStrokeWidth(newStrokeWidth);
+  };
   return (
     <div className="map-container">
-      <TransformWrapper maxScale={150}>
+      <TransformWrapper maxScale={150} onZoom={onZoom}>
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
           <>
             <MapControls />
