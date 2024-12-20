@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   TransformWrapper,
   TransformComponent,
@@ -13,21 +13,41 @@ export const Map = ({
 }: {
   onPathClick: (e: MouseEvent) => void;
 }) => {
-  const [strokeWidth, setStrokeWidth] = useState(10);
+  const MAX_SCALE = 1000;
+  const maxStroke = 0.35;
+  const minStroke = 0.075;
+  const [strokeWidth, setStrokeWidth] = useState(0.07);
+  const ref = useRef();
+
   const onZoom = (a, b) => {
-    console.log(a.state);
-    const maxStroke = 1; // Valor màxim del strokeWidth (escala 1)
-    const minStroke = 0.1; // Valor mínim del strokeWidth (escala 10)
-    const newStrokeWidth =
-      maxStroke - (a.state.scale - 1) * ((maxStroke - minStroke) / 29);
+    const newStrokeWidth = getStrokeWidth(a.state.scale);
     setStrokeWidth(newStrokeWidth);
   };
+
+  function onZoomWithButtons() {
+    const scale = ref.current.instance.transformState.scale;
+    const newStrokeWidth = getStrokeWidth(scale);
+    setStrokeWidth(newStrokeWidth);
+  }
+
+  function getStrokeWidth(scale) {
+    const logScale = Math.log(scale) / Math.log(MAX_SCALE); // Normalitza logaritme a escala [1, 150]
+    const newStrokeWidth = maxStroke - logScale * (maxStroke - minStroke);
+    return newStrokeWidth;
+  }
+
   return (
     <div className="map-container">
-      <TransformWrapper maxScale={150} onZoom={onZoom}>
+      <TransformWrapper ref={ref} maxScale={MAX_SCALE} onZoom={onZoom}>
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
           <>
-            <MapControls />
+            <MapControls
+              isMaxScale={
+                ref?.current?.instance?.transformState?.scale === MAX_SCALE
+              }
+              isMinScale={ref?.current?.instance?.transformState?.scale === 1}
+              onZoomWithButtons={onZoomWithButtons}
+            />
             <TransformComponent>
               <svg
                 className="map"

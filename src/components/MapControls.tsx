@@ -1,19 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { useControls, useTransformContext } from "react-zoom-pan-pinch";
+import { useControls } from "react-zoom-pan-pinch";
 
-export const MapControls = () => {
-  const { zoomIn, zoomOut, resetTransform } = useControls();
-  const context = useTransformContext();
+type MapControlsProps = {
+  isMaxScale: boolean;
+  isMinScale: boolean;
+  onZoomWithButtons: Function;
+};
 
-  const [strokeWidth, setStrokeWidth] = useState(0.5);
-  useEffect(() => {
-    console.log("context", context.transformState);
-  }, [context.transformState]);
+export const MapControls = ({
+  isMaxScale,
+  isMinScale,
+  onZoomWithButtons,
+}: MapControlsProps) => {
+  const { zoomIn, zoomOut /* resetTransform */ } = useControls();
   return (
     <div className="tools">
-      <button onClick={() => zoomIn()}>+</button>
-      <button onClick={() => zoomOut()}>-</button>
-      <button onClick={() => resetTransform()}>x</button>
+      <button
+        disabled={isMaxScale}
+        onClick={() => {
+          zoomIn();
+          onZoomWithButtons();
+        }}
+      >
+        +
+      </button>
+      <button
+        disabled={isMinScale}
+        onClick={() => {
+          zoomOut();
+          onZoomWithButtons();
+        }}
+      >
+        -
+      </button>
+      {/* <button onClick={() => resetTransform()}>x</button> */}
     </div>
   );
 };

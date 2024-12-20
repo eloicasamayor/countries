@@ -21,10 +21,24 @@ body {
   width: 8rem;
 }
 
+.map-container {
+  position: relative;
+}
+
+.tools {
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
 .tools button {
   height: 36px;
   width: 36px;
-  margin: 10px;
 }
 
 @media (min-width: 1250px) {
