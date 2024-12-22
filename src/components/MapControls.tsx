@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ReactZoomPanPinchRef, useControls } from "react-zoom-pan-pinch";
+import { useControls } from "react-zoom-pan-pinch";
 
 type MapControlsProps = {
   isMaxScale: boolean;
@@ -7,7 +7,7 @@ type MapControlsProps = {
   onZoomWithButtons: Function;
   zoomToElement: Function;
   selectedCountry: string;
-  wrapperRef: React.Ref<ReactZoomPanPinchRef>;
+  mapRef: React.RefObject<HTMLElement>;
 };
 
 export const MapControls = ({
@@ -16,15 +16,17 @@ export const MapControls = ({
   onZoomWithButtons,
   zoomToElement,
   selectedCountry,
-  wrapperRef,
+  mapRef,
 }: MapControlsProps) => {
   const { zoomIn, zoomOut /* resetTransform */ } = useControls();
   useEffect(() => {
-    const countryPath = wrapperRef?.current?.querySelector(
-      `[title="${selectedCountry}"]`
-    );
-    zoomToElement(countryPath);
-    //(node: HTMLElement | string, scale?: number, animationTime?: number, animationType?: keyof typeof animations) => void;
+    let countryPath;
+    if (mapRef?.current) {
+      countryPath = mapRef?.current?.querySelector(
+        `[title="${selectedCountry}"]`
+      );
+      zoomToElement(countryPath);
+    }
   }, [selectedCountry]);
   return (
     <div className="tools">

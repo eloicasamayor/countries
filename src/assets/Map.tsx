@@ -53,7 +53,7 @@ export const Map = ({
               onZoomWithButtons={onZoomWithButtons}
               zoomToElement={zoomToElement}
               selectedCountry={selectedCountry}
-              wrapperRef={mapRef}
+              mapRef={mapRef}
             />
             <TransformComponent>
               <svg
