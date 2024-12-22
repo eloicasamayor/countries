@@ -32,7 +32,7 @@ export const PointCountryGame = () => {
   return (
     <div className="game-page">
       <h1>Point the country</h1>
-      <Map onPathClick={onClickPais} />
+      <Map onPathClick={onClickPais} selectedCountry="" />
       <div style={{ margin: "20px" }}>
         <div
           style={{

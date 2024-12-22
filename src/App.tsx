@@ -1,7 +1,7 @@
 // @ts-ignore
 import { Map } from "./assets/Map";
 import "./App.css";
-import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PointCountryGame } from "./pages/PointCountryGame";
 import { PointCountryInfo } from "./pages/PointCountryInfo";
 import { IntroPage } from "./pages/IntroPage";
