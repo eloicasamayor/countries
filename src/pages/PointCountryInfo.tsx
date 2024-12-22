@@ -26,6 +26,7 @@ export function PointCountryInfo() {
       official: "",
     },
   });
+  const [countryList, setCountryList] = useState([]);
 
   useEffect(() => {
     if (!country) {
@@ -38,6 +39,15 @@ export function PointCountryInfo() {
         setCountryInfo(data[0]);
       });
   }, [country]);
+
+  useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/all`)
+      .then((response) => response.json())
+      // 4. Setting *dogImage* to the image url that we received from the response above
+      .then((data) => {
+        setCountryList(data);
+      });
+  }, []);
 
   function onClickPais(e: MouseEvent) {
     if (selectedPath.current) {
@@ -56,31 +66,32 @@ export function PointCountryInfo() {
   }
   return (
     <div className="app-page">
-      <Map onPathClick={onClickPais} />
+      <Map onPathClick={onClickPais} selectedCountry={country} />
 
       <div id="country-info">
         {countryInfo ? (
           <>
-            <div>
-              <h2>{country}</h2>{" "}
+            <p>
               <img className="country-flag" src={countryInfo.flags.svg} />
-            </div>
-            <div>
-              <p>
-                <strong>Official name:</strong> {countryInfo.name.official}
-              </p>
-              <p>
-                <strong>Capital:</strong> {countryInfo?.capital}
-              </p>
-              <p>
-                <strong>Languages:</strong>{" "}
-                {Object.values(countryInfo?.languages).map((l) => l + ", ")}
-              </p>
-            </div>
+              <strong>{country}</strong>
+              <br />
+              {countryInfo.name.official}
+              <br />
+              <strong>Capital:</strong> {countryInfo?.capital}
+            </p>
           </>
         ) : (
           "no info :/"
         )}
+      </div>
+      <div id="country-list">
+        <ul>
+          {countryList.map((country) => (
+            <li onClick={() => setCountry(country.name.common)}>
+              {country.name.common}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

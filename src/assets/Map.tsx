@@ -5,19 +5,23 @@ import {
   TransformComponent,
   useControls,
   useTransformContext,
+  zoom,
 } from "react-zoom-pan-pinch";
 import { MapControls } from "../components/MapControls";
 
 export const Map = ({
   onPathClick,
+  selectedCountry,
 }: {
   onPathClick: (e: MouseEvent) => void;
+  selectedCountry: string;
 }) => {
   const MAX_SCALE = 1000;
   const maxStroke = 0.35;
   const minStroke = 0.075;
   const [strokeWidth, setStrokeWidth] = useState(0.07);
   const ref = useRef();
+  const mapRef = useRef();
 
   const onZoom = (a, b) => {
     const newStrokeWidth = getStrokeWidth(a.state.scale);
@@ -39,7 +43,7 @@ export const Map = ({
   return (
     <div className="map-container">
       <TransformWrapper ref={ref} maxScale={MAX_SCALE} onZoom={onZoom}>
-        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+        {({ zoomIn, zoomOut, resetTransform, zoomToElement, ...rest }) => (
           <>
             <MapControls
               isMaxScale={
@@ -47,6 +51,9 @@ export const Map = ({
               }
               isMinScale={ref?.current?.instance?.transformState?.scale === 1}
               onZoomWithButtons={onZoomWithButtons}
+              zoomToElement={zoomToElement}
+              selectedCountry={selectedCountry}
+              wrapperRef={mapRef}
             />
             <TransformComponent>
               <svg
@@ -60,6 +67,7 @@ export const Map = ({
                   aspectRatio: "1.515",
                   preserveAspectRatio: "xMidYMid meet",
                 }}
+                ref={mapRef}
               >
                 <path
                   d="m 479.68275,331.6274 -0.077,0.025 -0.258,0.155 -0.147,0.054 -0.134,0.027 -0.105,-0.011 -0.058,-0.091 0.006,-0.139 -0.024,-0.124 -0.02,-0.067 0.038,-0.181 0.086,-0.097 0.119,-0.08 0.188,0.029 0.398,0.116 0.083,0.109 10e-4,0.072 -0.073,0.119 z"
