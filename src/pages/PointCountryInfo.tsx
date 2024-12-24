@@ -67,6 +67,7 @@ export function PointCountryInfo() {
   };
   const [countryInfo, setCountryInfo] = useState<countryInfoT | undefined>();
   const [countryList, setCountryList] = useState<Country[] | undefined>();
+  const [loadingList, setLoadingList] = useState<boolean>();
 
   useEffect(() => {
     if (!country) {
@@ -81,12 +82,14 @@ export function PointCountryInfo() {
   }, [country]);
 
   useEffect(() => {
+    setLoadingList(true);
     fetch(`https://restcountries.com/v3.1/all`)
       .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
         setCountryList(data);
-      });
+      })
+      .then(() => setLoadingList(false));
   }, []);
 
   function onClickPais(e: MouseEvent) {
@@ -124,7 +127,9 @@ export function PointCountryInfo() {
           "no info :/"
         )}
       </div>
-      {countryList && (
+      {loadingList ? (
+        <p>{"loading list..."}</p>
+      ) : countryList ? (
         <div id="country-list">
           <ul>
             {countryList.map((country) => (
@@ -134,6 +139,8 @@ export function PointCountryInfo() {
             ))}
           </ul>
         </div>
+      ) : (
+        <p>{"Couldn't load the countries list :/"}</p>
       )}
     </div>
   );
