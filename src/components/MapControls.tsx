@@ -20,14 +20,21 @@ export const MapControls = ({
 }: MapControlsProps) => {
   const { zoomIn, zoomOut /* resetTransform */ } = useControls();
   useEffect(() => {
+    if (!mapRef?.current) {
+      return;
+    }
     let countryPath;
-    if (mapRef?.current) {
+    if (!selectedCountry) {
+      countryPath = mapRef?.current;
+    } else {
       countryPath = mapRef?.current?.querySelector(
         `[title="${selectedCountry}"]`
       );
-      zoomToElement(countryPath);
     }
+
+    zoomToElement(countryPath);
   }, [selectedCountry]);
+
   return (
     <div className="tools">
       <button

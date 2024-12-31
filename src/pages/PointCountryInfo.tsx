@@ -83,7 +83,7 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(`https://restcountries.com/v3.1/all`)
+    fetch(`https://restcountries.com/v3.1/all?fields=name`)
       .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
@@ -92,6 +92,10 @@ export function PointCountryInfo() {
       .then(() => setLoadingList(false));
   }, []);
 
+  function unselectCountry() {
+    setCountry("");
+    setCountryInfo(undefined);
+  }
   function onClickPais(e: MouseEvent) {
     if (selectedPath.current) {
       selectedPath.current.setAttribute("style", "fill:black");
@@ -114,6 +118,7 @@ export function PointCountryInfo() {
       <div id="country-info">
         {countryInfo ? (
           <>
+            <button onClick={unselectCountry}>X</button>
             <p>
               <img className="country-flag" src={countryInfo.flags.svg} />
               <strong>{country}</strong>
