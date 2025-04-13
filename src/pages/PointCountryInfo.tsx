@@ -2,6 +2,17 @@
 import { Map } from "../assets/Map";
 import "../App.css";
 import { useEffect, useRef, useState } from "react";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Card, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
@@ -83,23 +94,24 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(`https://restcountries.com/v3.1/all?fields=name`)
+    fetch(`https://restcountries.com/v3.1/all?fields=name,capital,currencies`)
       .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
+        console.log(data);
         setCountryList(data);
       })
       .then(() => setLoadingList(false));
   }, []);
 
   function unselectCountry() {
+    if (selectedPath?.current) {
+      selectedPath.current.setAttribute("style", "fill:black");
+    }
     setCountry("");
     setCountryInfo(undefined);
   }
   function onClickPais(e: MouseEvent) {
-    if (selectedPath.current) {
-      selectedPath.current.setAttribute("style", "fill:black");
-    }
     const targ = e.target as SVGPathElement;
     selectedPath.current = targ;
     const title = (targ.attributes.getNamedItem("title") as Attr).value;
@@ -107,20 +119,37 @@ export function PointCountryInfo() {
     if (!title || !targ) {
       return;
     }
-    console.log(title);
-    targ.setAttribute("style", "fill:red");
     setCountry(title);
   }
+
   return (
     <div className="app-page">
       <Map onPathClick={onClickPais} selectedCountry={country} />
 
-      <div id="country-info">
+      <Card id="country-info">
         {countryInfo ? (
           <>
-            <button onClick={unselectCountry}>X</button>
-            <p>
+            <div className="flex justify-between">
               <img className="country-flag" src={countryInfo.flags.svg} />
+              <Button onClick={unselectCountry} variant={"outline"}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="lucide lucide-x-icon lucide-x"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </Button>
+            </div>
+            <p>
               <strong>{country}</strong>
               <br />
               {countryInfo.name.official}
@@ -129,21 +158,76 @@ export function PointCountryInfo() {
             </p>
           </>
         ) : (
-          "no info :/"
+          <form className="flex">
+            <input
+              type="search"
+              id="default-search"
+              className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              placeholder="Search a country"
+              required
+            />
+            <Button
+              variant={"outline"}
+              type="submit"
+              className=" absolute end-3.5 top-3.5 h-10 w-10"
+            >
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </Button>
+          </form>
         )}
-      </div>
+      </Card>
       {loadingList ? (
         <p>{"loading list..."}</p>
       ) : countryList ? (
-        <div id="country-list">
-          <ul>
-            {countryList.map((country) => (
-              <li onClick={() => setCountry(country.name.common)}>
-                {country.name.common}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div id="country-list">
+            <Table>
+              <TableCaption>A list of your recent invoices.</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[100px]">#</TableHead>
+                  <TableHead className="max-w-10">Country name</TableHead>
+                  <TableHead>Capital</TableHead>
+                  <TableHead>Currencies</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {countryList.map((country, i) => (
+                  <TableRow
+                    key={country.name.common}
+                    onClick={() => setCountry(country.name.common)}
+                  >
+                    <TableCell className="font-medium">{i + 1}</TableCell>
+                    <TableCell>
+                      {country.name.common.length > 22
+                        ? country.name.common.substring(0, 22) + "..."
+                        : country.name.common}
+                    </TableCell>
+                    <TableCell>{country.capital}</TableCell>
+                    <TableCell>
+                      {Object.values(country.currencies)
+                        .map(({ name, symbol }) => `${name} (${symbol})`)
+                        .join(", ")}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </>
       ) : (
         <p>{"Couldn't load the countries list :/"}</p>
       )}

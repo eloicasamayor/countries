@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useControls } from "react-zoom-pan-pinch";
+import { Button } from "./ui/button";
 
 type MapControlsProps = {
   isMaxScale: boolean;
@@ -37,7 +38,8 @@ export const MapControls = ({
 
   return (
     <div className="tools">
-      <button
+      <Button
+        variant={"outline"}
         disabled={isMaxScale}
         onClick={() => {
           zoomIn();
@@ -45,8 +47,9 @@ export const MapControls = ({
         }}
       >
         +
-      </button>
-      <button
+      </Button>
+      <Button
+        variant={"outline"}
         disabled={isMinScale}
         onClick={() => {
           zoomOut();
@@ -54,7 +57,7 @@ export const MapControls = ({
         }}
       >
         -
-      </button>
+      </Button>
       {/* <button onClick={() => resetTransform()}>x</button> */}
     </div>
   );
