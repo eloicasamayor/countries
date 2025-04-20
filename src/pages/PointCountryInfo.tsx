@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -131,15 +130,16 @@ export function PointCountryInfo() {
     : countryList;
 
   const filterBySearch = () => {
+    if (!searchRef?.current?.value) return;
     setCountryFilteredList(
       countryList?.filter((countryToSearch) => {
         const foundInName = countryToSearch.name.common
           .toLowerCase()
-          .includes(searchRef?.current?.value?.toLowerCase());
+          .includes(searchRef.current.value.toLowerCase());
         console.log(countryToSearch.name.common, countryToSearch.capital[0]);
         const foundInCapital = countryToSearch.capital?.[0]
           ?.toLowerCase()
-          .includes(searchRef?.current?.value?.toLowerCase());
+          .includes(searchRef.current.value.toLowerCase());
         return foundInName || foundInCapital;
       })
     );
