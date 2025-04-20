@@ -78,7 +78,11 @@ export function PointCountryInfo() {
   };
   const [countryInfo, setCountryInfo] = useState<countryInfoT | undefined>();
   const [countryList, setCountryList] = useState<Country[] | undefined>();
+  const [countryFilteredList, setCountryFilteredList] = useState<
+    Country[] | undefined
+  >();
   const [loadingList, setLoadingList] = useState<boolean>();
+  const searchRef = useRef(null);
 
   useEffect(() => {
     if (!country) {
@@ -122,6 +126,25 @@ export function PointCountryInfo() {
     setCountry(title);
   }
 
+  const countryListToRender = countryFilteredList?.length
+    ? countryFilteredList
+    : countryList;
+
+  const filterBySearch = () => {
+    setCountryFilteredList(
+      countryList?.filter((countryToSearch) => {
+        const foundInName = countryToSearch.name.common
+          .toLowerCase()
+          .includes(searchRef?.current?.value?.toLowerCase());
+        console.log(countryToSearch.name.common, countryToSearch.capital[0]);
+        const foundInCapital = countryToSearch.capital?.[0]
+          ?.toLowerCase()
+          .includes(searchRef?.current?.value?.toLowerCase());
+        return foundInName || foundInCapital;
+      })
+    );
+  };
+
   return (
     <div className="app-page">
       <Map onPathClick={onClickPais} selectedCountry={country} />
@@ -158,13 +181,21 @@ export function PointCountryInfo() {
             </p>
           </>
         ) : (
-          <form className="flex">
+          <form
+            className="flex"
+            onSubmit={(e) => {
+              e.preventDefault();
+              filterBySearch();
+            }}
+          >
             <input
               type="search"
               id="default-search"
+              ref={searchRef}
               className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder="Search a country"
               required
+              onChange={filterBySearch}
             />
             <Button
               variant={"outline"}
@@ -191,11 +222,10 @@ export function PointCountryInfo() {
       </Card>
       {loadingList ? (
         <p>{"loading list..."}</p>
-      ) : countryList ? (
+      ) : countryListToRender ? (
         <>
           <div id="country-list">
             <Table>
-              <TableCaption>A list of your recent invoices.</TableCaption>
               <TableHeader>
                 <TableRow>
                   <TableHead className="w-[100px]">#</TableHead>
@@ -205,7 +235,7 @@ export function PointCountryInfo() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {countryList.map((country, i) => (
+                {countryListToRender.map((country, i) => (
                   <TableRow
                     key={country.name.common}
                     onClick={() => setCountry(country.name.common)}
