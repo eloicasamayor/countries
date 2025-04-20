@@ -81,7 +81,7 @@ export function PointCountryInfo() {
     Country[] | undefined
   >();
   const [loadingList, setLoadingList] = useState<boolean>();
-  const searchRef = useRef(null);
+  const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!country) {
@@ -130,9 +130,9 @@ export function PointCountryInfo() {
     : countryList;
 
   const filterBySearch = () => {
-    if (!searchRef?.current?.value) return;
     setCountryFilteredList(
       countryList?.filter((countryToSearch) => {
+        if (!searchRef?.current?.value) return;
         const foundInName = countryToSearch.name.common
           .toLowerCase()
           .includes(searchRef.current.value.toLowerCase());
