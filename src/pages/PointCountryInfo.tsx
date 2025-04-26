@@ -81,7 +81,7 @@ export function PointCountryInfo() {
     Country[] | undefined
   >();
   const [loadingList, setLoadingList] = useState<boolean>();
-  const searchRef = useRef<HTMLInputElement>(null);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   useEffect(() => {
     if (!country) {
@@ -109,7 +109,7 @@ export function PointCountryInfo() {
 
   function unselectCountry() {
     if (selectedPath?.current) {
-      selectedPath.current.setAttribute("style", "fill:black");
+      selectedPath.current.setAttribute("className", "fill-stone-800");
     }
     setCountry("");
     setCountryInfo(undefined);
@@ -125,32 +125,34 @@ export function PointCountryInfo() {
     setCountry(title);
   }
 
-  const countryListToRender = countryFilteredList?.length
-    ? countryFilteredList
-    : countryList;
+  const countryListToRender =
+    searchValue !== "" ? countryFilteredList : countryList;
 
   const filterBySearch = () => {
     setCountryFilteredList(
       countryList?.filter((countryToSearch) => {
-        if (!searchRef?.current?.value) return;
+        if (!searchValue) return;
         const foundInName = countryToSearch.name.common
           .toLowerCase()
-          .includes(searchRef.current.value.toLowerCase());
+          .includes(searchValue.toLowerCase());
         console.log(countryToSearch.name.common, countryToSearch.capital[0]);
         const foundInCapital = countryToSearch.capital?.[0]
           ?.toLowerCase()
-          .includes(searchRef.current.value.toLowerCase());
+          .includes(searchValue.toLowerCase());
         return foundInName || foundInCapital;
       })
     );
   };
 
+  useEffect(() => filterBySearch(), [searchValue]);
+
   return (
     <div className="flex flex-col lg:flex-row">
       <Map onPathClick={onClickPais} selectedCountry={country} />
+      <div className="aspect-[4.5/3]"></div>
 
       <Card className="z-20 fixed bottom-0 p-2.5 w-full bg-gray-300">
-        {countryInfo ? (
+        {countryInfo && (
           <>
             <div className="flex justify-between">
               <img className="w-14" src={countryInfo.flags.svg} />
@@ -180,45 +182,54 @@ export function PointCountryInfo() {
               <strong>Capital:</strong> {countryInfo?.capital}
             </p>
           </>
-        ) : (
+        )}
+        {
           <form
-            className="flex"
+            className={`flex ${!!countryInfo && "hidden"}`}
             onSubmit={(e) => {
               e.preventDefault();
-              filterBySearch();
+              setSearchValue(e?.target[0].value);
             }}
           >
             <input
               type="search"
               id="default-search"
-              ref={searchRef}
               className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder="Search a country"
               required
-              onChange={filterBySearch}
+              onChange={(e) => {
+                console.log(e);
+                setSearchValue(e.target.value);
+              }}
+              value={searchValue}
             />
-            <Button
-              variant={"outline"}
-              type="submit"
-              className=" absolute end-3.5 top-3.5 h-10 w-10"
-            >
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
+            {!!searchValue && (
+              <Button
+                variant={"outline"}
+                type="button"
+                className=" absolute end-3.5 top-3.5 h-10 w-10"
+                onClick={() => {
+                  setSearchValue("");
+                }}
               >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </Button>
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 6l8 8m0-8l-8 8"
+                  />
+                </svg>
+              </Button>
+            )}
           </form>
-        )}
+        }
       </Card>
       {loadingList ? (
         <p>{"loading list..."}</p>
