@@ -188,10 +188,16 @@ export function PointCountryInfo() {
             className={`flex ${!!countryInfo && "hidden"}`}
             onSubmit={(e) => {
               e.preventDefault();
-              setSearchValue(e?.target[0].value);
+              const form = e.target as HTMLFormElement;
+              setSearchValue((form.elements[0] as HTMLInputElement).value);
+              const input = form.elements.namedItem(
+                "search"
+              ) as HTMLInputElement;
+              input.blur();
             }}
           >
             <input
+              name="search"
               type="search"
               id="default-search"
               className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
@@ -205,6 +211,7 @@ export function PointCountryInfo() {
             />
             {!!searchValue && (
               <Button
+                id="search-btn"
                 variant={"outline"}
                 type="button"
                 className=" absolute end-3.5 top-3.5 h-10 w-10"
