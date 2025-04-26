@@ -44,7 +44,7 @@ export const Map = ({
   const unselectedColor = "fill-stone-800";
 
   return (
-    <div className="map-container">
+    <div className="map-container fixed lg:static top-0 bg-white z-10 w-full">
       <TransformWrapper ref={ref} maxScale={MAX_SCALE} onZoom={onZoom}>
         {({ zoomIn, zoomOut, resetTransform, zoomToElement, ...rest }) => (
           <>
@@ -60,12 +60,10 @@ export const Map = ({
             />
             <TransformComponent>
               <svg
-                className="map"
+                className="map w-screen lg:w-xl "
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1050 650"
                 id="map-svg"
-                width={"100vw"}
-                height={"auto"}
                 style={{
                   aspectRatio: "1.515",
                   preserveAspectRatio: "xMidYMid meet",

@@ -146,14 +146,14 @@ export function PointCountryInfo() {
   };
 
   return (
-    <div className="app-page">
+    <div className="flex flex-col lg:flex-row">
       <Map onPathClick={onClickPais} selectedCountry={country} />
 
-      <Card id="country-info">
+      <Card className="z-20 fixed bottom-0 p-2.5 w-full bg-gray-300">
         {countryInfo ? (
           <>
             <div className="flex justify-between">
-              <img className="country-flag" src={countryInfo.flags.svg} />
+              <img className="w-14" src={countryInfo.flags.svg} />
               <Button onClick={unselectCountry} variant={"outline"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

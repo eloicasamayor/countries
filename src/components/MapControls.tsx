@@ -37,8 +37,9 @@ export const MapControls = ({
   }, [selectedCountry]);
 
   return (
-    <div className="tools">
+    <div className="tools absolute z-30 bottom-0 right-0 flex flex-col mr-2 mb-2">
       <Button
+        className="h-9 w-9"
         variant={"outline"}
         disabled={isMaxScale}
         onClick={() => {
@@ -49,6 +50,7 @@ export const MapControls = ({
         +
       </Button>
       <Button
+        className="h-9 w-9"
         variant={"outline"}
         disabled={isMinScale}
         onClick={() => {
