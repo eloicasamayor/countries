@@ -128,20 +128,30 @@ export function PointCountryInfo() {
   const countryListToRender =
     searchValue !== "" ? countryFilteredList : countryList;
 
+  const normalizeText = (text: string) =>
+    text
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
   const filterBySearch = () => {
-    setCountryFilteredList(
-      countryList?.filter((countryToSearch) => {
-        if (!searchValue) return;
-        const foundInName = countryToSearch.name.common
-          .toLowerCase()
-          .includes(searchValue.toLowerCase());
-        console.log(countryToSearch.name.common, countryToSearch.capital[0]);
-        const foundInCapital = countryToSearch.capital?.[0]
-          ?.toLowerCase()
-          .includes(searchValue.toLowerCase());
-        return foundInName || foundInCapital;
-      })
-    );
+    if (!searchValue) return;
+
+    const normalizedSearch = normalizeText(searchValue);
+
+    const filteredList = countryList?.filter((country) => {
+      const normalizedName = normalizeText(country.name.common);
+      const normalizedCapital = country.capital?.[0]
+        ? normalizeText(country.capital[0])
+        : "";
+
+      return (
+        normalizedName.includes(normalizedSearch) ||
+        normalizedCapital.includes(normalizedSearch)
+      );
+    });
+
+    setCountryFilteredList(filteredList);
   };
 
   useEffect(() => filterBySearch(), [searchValue]);
