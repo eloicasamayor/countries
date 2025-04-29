@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
+import { unMembers, unSecurityCouncil } from "../data/countries-data";
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
   const [country, setCountry] = useState("");
@@ -154,6 +154,14 @@ export function PointCountryInfo() {
     setCountryFilteredList(filteredList);
   };
 
+  const findCountryInUNMembers = (search: string) => {
+    const normalizedSearch = normalizeText(search);
+
+    return unMembers.find((entry) =>
+      normalizeText(entry.country).includes(normalizedSearch)
+    );
+  };
+
   useEffect(() => filterBySearch(), [searchValue]);
 
   return (
@@ -190,6 +198,14 @@ export function PointCountryInfo() {
               {countryInfo.name.official}
               <br />
               <strong>Capital:</strong> {countryInfo?.capital}
+              <br />
+              <strong>UN member:</strong>{" "}
+              {findCountryInUNMembers(countryInfo.name.common)
+                ?.admission_date ?? "no"}
+              <br />
+              {unSecurityCouncil.includes(countryInfo.name.common)
+                ? "Permanent member of the UN Security Council"
+                : ""}
             </p>
           </>
         )}
