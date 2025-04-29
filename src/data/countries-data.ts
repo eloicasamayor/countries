@@ -1033,3 +1033,5 @@ export const unSecurityCouncil = [
   "United Kingdom",
   "United States",
 ];
+
+export const unObservers = ["Vatican City", "Palestine"];
