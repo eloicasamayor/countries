@@ -27,6 +27,7 @@ export function PointCountryInfo() {
       svg: string;
     };
     name: {
+      common: string;
       official: string;
     };
   };
