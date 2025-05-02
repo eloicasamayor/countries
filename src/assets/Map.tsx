@@ -8,7 +8,7 @@ import {
   zoom,
 } from "react-zoom-pan-pinch";
 import { MapControls } from "../components/MapControls";
-import { ProjectInfo } from "@/components/projectInfo";
+import { ProjectInfo } from "@/components/ProjectInfo";
 import { Button } from "../components/ui/button";
 export const Map = ({
   onPathClick,
