@@ -102,7 +102,7 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(`https://restcountries.com/v3.1/all?fields=name,capital,currencies`)
+    fetch(`https://restcountries.com/v3.1/all?fields=name,capital`)
       .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
@@ -128,6 +128,13 @@ export function PointCountryInfo() {
       return;
     }
     setCountry(title);
+    const countryRow = document.getElementById(`table-country-${title}`);
+    countryRow?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+    console.log("hola");
   }
 
   const countryListToRender =
@@ -174,7 +181,7 @@ export function PointCountryInfo() {
       <Map onPathClick={onClickPais} selectedCountry={country} />
       <div className="aspect-[4.5/3]"></div>
 
-      <Card className="z-20 fixed bottom-0 p-2.5 w-full bg-gray-300">
+      <Card className="z-20 fixed bottom-0 p-2.5 w-full bg-gray-300 rounded-b-none">
         {countryInfo && (
           <>
             <div className="flex justify-between">
@@ -283,29 +290,34 @@ export function PointCountryInfo() {
                   <TableHead className="w-[100px]">#</TableHead>
                   <TableHead className="max-w-10">Country name</TableHead>
                   <TableHead>Capital</TableHead>
-                  <TableHead>Currencies</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {countryListToRender.map((country, i) => (
-                  <TableRow
-                    key={country.name.common}
-                    onClick={() => setCountry(country.name.common)}
-                  >
-                    <TableCell className="font-medium">{i + 1}</TableCell>
-                    <TableCell>
-                      {country.name.common.length > 22
-                        ? country.name.common.substring(0, 22) + "..."
-                        : country.name.common}
-                    </TableCell>
-                    <TableCell>{country.capital}</TableCell>
-                    <TableCell>
-                      {Object.values(country.currencies)
-                        .map(({ name, symbol }) => `${name} (${symbol})`)
-                        .join(", ")}
-                    </TableCell>
-                  </TableRow>
-                ))}
+                {countryListToRender.map((country, i) => {
+                  const bg =
+                    countryInfo?.name.common === country.name.common
+                      ? "bg-gray-300"
+                      : "";
+                  return (
+                    <TableRow
+                      key={country.name.common}
+                      onClick={() => setCountry(country.name.common)}
+                      id={`table-country-${country.name.common}`}
+                    >
+                      <TableCell className={`font-medium ${bg}`}>
+                        {i + 1}
+                      </TableCell>
+                      <TableCell className={`${bg}`}>
+                        {country.name.common.length > 22
+                          ? country.name.common.substring(0, 22) + "..."
+                          : country.name.common}
+                      </TableCell>
+                      <TableCell className={`${bg}`}>
+                        {country.capital}
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
               </TableBody>
             </Table>
           </div>
