@@ -70,7 +70,7 @@ export const Map = ({
               />
               <TransformComponent>
                 <svg
-                  className="map w-screen lg:w-xl "
+                  className="map w-screen lg:w-xl lg:static"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1050 650"
                   id="map-svg"
