@@ -177,9 +177,10 @@ export function PointCountryInfo() {
   useEffect(() => filterBySearch(), [searchValue]);
 
   return (
-    <div className="flex flex-col lg:flex-row">
-      <Map onPathClick={onClickPais} selectedCountry={country} />
-      <div className="aspect-[4.5/3]"></div>
+    <div className="flex flex-col lg:flex-row-reverse">
+      <div className="aspect-[4.5/3]">
+        <Map onPathClick={onClickPais} selectedCountry={country} />
+      </div>
 
       <Card className="z-20 fixed bottom-0 p-2.5 w-full bg-gray-300 rounded-b-none">
         {countryInfo && (

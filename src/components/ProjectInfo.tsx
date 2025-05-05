@@ -9,7 +9,7 @@ import {
 export const ProjectInfo = () => {
   return (
     <Dialog>
-      <DialogTrigger className="h-9 w-9 absolute top-0 right-0 mr-2 mt-2 z-50">
+      <DialogTrigger className="h-9 w-9 fixed top-0 right-0 mr-2 mt-2 z-50">
         ?
       </DialogTrigger>
       <DialogContent>

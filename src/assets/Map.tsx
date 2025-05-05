@@ -47,17 +47,10 @@ export const Map = ({
   return (
     <>
       {<ProjectInfo />}
-      <div className="map-container fixed lg:static top-0 bg-white z-10 w-full">
+      <div className="map-container fixed left-0 top-0 bg-white z-10">
         <TransformWrapper ref={ref} maxScale={MAX_SCALE} onZoom={onZoom}>
           {({ zoomIn, zoomOut, resetTransform, zoomToElement, ...rest }) => (
             <>
-              <Button
-                className="h-9 w-9 absolute top-0 right-0 mr-2 mt-2 z-50"
-                variant={"outline"}
-                onClick={() => setIsOptionsDialogOpen((oldValue) => !oldValue)}
-              >
-                ?
-              </Button>
               <MapControls
                 isMaxScale={
                   ref?.current?.instance?.transformState?.scale === MAX_SCALE
