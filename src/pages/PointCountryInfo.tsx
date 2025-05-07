@@ -322,7 +322,7 @@ export function PointCountryInfo() {
                 <div className="items-top flex space-x-2">
                   <Checkbox
                     id="checkbox-independent"
-                    onCheckedChange={(e) => setIndependentChecked(e)}
+                    onCheckedChange={(e) => setIndependentChecked(e === true)}
                     defaultChecked={true}
                   />
                   <div className="grid gap-1.5 leading-none">
@@ -342,7 +342,9 @@ export function PointCountryInfo() {
                   <div className="items-top flex space-x-2">
                     <Checkbox
                       id="checkbox-not-independent"
-                      onCheckedChange={(e) => setNotIndependentChecked(e)}
+                      onCheckedChange={(e) =>
+                        setNotIndependentChecked(e === true)
+                      }
                       defaultChecked={true}
                     />
                     <div className="grid gap-1.5 leading-none">
