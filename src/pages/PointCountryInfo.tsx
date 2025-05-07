@@ -17,10 +17,19 @@ import {
   unSecurityCouncil,
   unObservers,
 } from "../data/countries-data";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { ListFilter } from "lucide-react";
+
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
-  const independentCheckboxRef = useRef<HTMLInputElement | null>(null);
-  const notIndependentCheckboxRef = useRef<HTMLInputElement | null>(null);
   const [country, setCountry] = useState("");
   type countryInfoT = {
     capital: string;
@@ -90,6 +99,9 @@ export function PointCountryInfo() {
   const [loadingList, setLoadingList] = useState<boolean>();
   const [searchValue, setSearchValue] = useState<string>("");
 
+  const [independentChecked, setIndependentChecked] = useState(true);
+  const [notIndependentChecked, setNotIndependentChecked] = useState(true);
+
   useEffect(() => {
     if (!country) {
       return;
@@ -148,14 +160,12 @@ export function PointCountryInfo() {
       .toLowerCase();
 
   const applyCombinedFilters = () => {
-    const independentChecked = independentCheckboxRef.current?.checked;
-    const notIndependentChecked = notIndependentCheckboxRef.current?.checked;
     const normalizedSearch = normalizeText(searchValue);
 
-    const filteredCountries = countryList?.filter((country) => {
+    const filteredCountries = countryList?.filter((countryToFilter) => {
       // Filtre per independència
-      const isIndependent = country.independent === true;
-      const isNotIndependent = country.independent === false;
+      const isIndependent = countryToFilter.independent === true;
+      const isNotIndependent = countryToFilter.independent === false;
 
       let passesIndependenceFilter = false;
       if (independentChecked && notIndependentChecked) {
@@ -169,9 +179,9 @@ export function PointCountryInfo() {
       }
 
       // Filtre per cerca
-      const normalizedName = normalizeText(country.name.common);
-      const normalizedCapital = country.capital?.[0]
-        ? normalizeText(country.capital[0])
+      const normalizedName = normalizeText(countryToFilter.name.common);
+      const normalizedCapital = countryToFilter.capital?.[0]
+        ? normalizeText(countryToFilter.capital[0])
         : "";
 
       const passesSearchFilter =
@@ -194,7 +204,10 @@ export function PointCountryInfo() {
     );
   };
 
-  useEffect(() => applyCombinedFilters(), [searchValue]);
+  useEffect(
+    () => applyCombinedFilters(),
+    [searchValue, independentChecked, notIndependentChecked]
+  );
 
   return (
     <div className="flex flex-col lg:flex-row-reverse">
@@ -259,7 +272,7 @@ export function PointCountryInfo() {
             }}
           >
             <div className="relative grow">
-              <input
+              <Input
                 name="search"
                 type="search"
                 id="default-search"
@@ -276,7 +289,7 @@ export function PointCountryInfo() {
                   id="search-btn"
                   variant={"outline"}
                   type="button"
-                  className=" absolute end-2 top-1.5 h-10 w-10"
+                  className=" absolute end-2 top-1.5 h-6 w-6"
                   onClick={() => {
                     setSearchValue("");
                   }}
@@ -298,26 +311,62 @@ export function PointCountryInfo() {
                 </Button>
               )}
             </div>
-            <label>
-              <input
-                type="checkbox"
-                id="checkbox_independent"
-                ref={independentCheckboxRef}
-                onChange={applyCombinedFilters}
-                defaultChecked={true}
-              />
-              independent
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                id="checkbox_independent"
-                ref={notIndependentCheckboxRef}
-                onChange={applyCombinedFilters}
-                defaultChecked={true}
-              />
-              Not independent
-            </label>
+            <Dialog>
+              <DialogTrigger className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3">
+                <ListFilter />
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Filters</DialogTitle>
+                </DialogHeader>
+                <div className="items-top flex space-x-2">
+                  <Checkbox
+                    id="checkbox-independent"
+                    onCheckedChange={(e) => setIndependentChecked(e)}
+                    defaultChecked={true}
+                  />
+                  <div className="grid gap-1.5 leading-none">
+                    <label
+                      htmlFor="checkbox-independent"
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Independent states
+                    </label>
+                    <p className="text-sm text-muted-foreground">
+                      Show independent states.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-left">
+                  <div className="items-top flex space-x-2">
+                    <Checkbox
+                      id="checkbox-not-independent"
+                      onCheckedChange={(e) => setNotIndependentChecked(e)}
+                      defaultChecked={true}
+                    />
+                    <div className="grid gap-1.5 leading-none">
+                      <label
+                        htmlFor="checkbox-not-independent"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Not independent states
+                      </label>
+                      <p className="text-sm text-muted-foreground">
+                        Show not independent states.
+                      </p>
+                    </div>
+                  </div>
+                  <br></br>
+                  {searchValue && (
+                    <label>
+                      Search query:
+                      <Input type="text" disabled defaultValue={searchValue} />
+                    </label>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
           </form>
         }
       </Card>
