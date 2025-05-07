@@ -19,6 +19,8 @@ import {
 } from "../data/countries-data";
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
+  const independentCheckboxRef = useRef<HTMLInputElement | null>(null);
+  const notIndependentCheckboxRef = useRef<HTMLInputElement | null>(null);
   const [country, setCountry] = useState("");
   type countryInfoT = {
     capital: string;
@@ -102,11 +104,14 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(`https://restcountries.com/v3.1/all?fields=name,capital,cca2`)
+    fetch(
+      `https://restcountries.com/v3.1/all?fields=name,capital,cca2,independent`
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setCountryList(data);
+        setCountryFilteredList(data);
       })
       .then(() => setLoadingList(false));
   }, []);
@@ -118,6 +123,7 @@ export function PointCountryInfo() {
     setCountry("");
     setCountryInfo(undefined);
   }
+
   function onClickPais(e: MouseEvent) {
     const targ = e.target as SVGPathElement;
     selectedPath.current = targ;
@@ -135,33 +141,49 @@ export function PointCountryInfo() {
     });
   }
 
-  const countryListToRender =
-    searchValue !== "" ? countryFilteredList : countryList;
-
   const normalizeText = (text: string) =>
     text
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
-  const filterBySearch = () => {
-    if (!searchValue) return;
-
+  const applyCombinedFilters = () => {
+    const independentChecked = independentCheckboxRef.current?.checked;
+    const notIndependentChecked = notIndependentCheckboxRef.current?.checked;
     const normalizedSearch = normalizeText(searchValue);
 
-    const filteredList = countryList?.filter((country) => {
+    const filteredCountries = countryList?.filter((country) => {
+      // Filtre per independència
+      const isIndependent = country.independent === true;
+      const isNotIndependent = country.independent === false;
+
+      let passesIndependenceFilter = false;
+      if (independentChecked && notIndependentChecked) {
+        passesIndependenceFilter = true; // mostra tots
+      } else if (independentChecked) {
+        passesIndependenceFilter = isIndependent;
+      } else if (notIndependentChecked) {
+        passesIndependenceFilter = isNotIndependent;
+      } else {
+        passesIndependenceFilter = false; // cap checkbox → no passa
+      }
+
+      // Filtre per cerca
       const normalizedName = normalizeText(country.name.common);
       const normalizedCapital = country.capital?.[0]
         ? normalizeText(country.capital[0])
         : "";
 
-      return (
+      const passesSearchFilter =
+        !normalizedSearch ||
         normalizedName.includes(normalizedSearch) ||
-        normalizedCapital.includes(normalizedSearch)
-      );
+        normalizedCapital.includes(normalizedSearch);
+
+      // Només incloure si passa els dos filtres
+      return passesIndependenceFilter && passesSearchFilter;
     });
 
-    setCountryFilteredList(filteredList);
+    setCountryFilteredList(filteredCountries);
   };
 
   const findCountryInUNMembers = (search: string) => {
@@ -172,7 +194,7 @@ export function PointCountryInfo() {
     );
   };
 
-  useEffect(() => filterBySearch(), [searchValue]);
+  useEffect(() => applyCombinedFilters(), [searchValue]);
 
   return (
     <div className="flex flex-col lg:flex-row-reverse">
@@ -225,7 +247,7 @@ export function PointCountryInfo() {
         )}
         {
           <form
-            className={`flex ${!!countryInfo && "hidden"}`}
+            className={`flex gap-4 ${!!countryInfo && "hidden"}`}
             onSubmit={(e) => {
               e.preventDefault();
               const form = e.target as HTMLFormElement;
@@ -236,51 +258,72 @@ export function PointCountryInfo() {
               input.blur();
             }}
           >
-            <input
-              name="search"
-              type="search"
-              id="default-search"
-              className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-              placeholder="Search a country"
-              required
-              onChange={(e) => {
-                console.log(e);
-                setSearchValue(e.target.value);
-              }}
-              value={searchValue}
-            />
-            {!!searchValue && (
-              <Button
-                id="search-btn"
-                variant={"outline"}
-                type="button"
-                className=" absolute end-3.5 top-3.5 h-10 w-10"
-                onClick={() => {
-                  setSearchValue("");
+            <div className="relative grow">
+              <input
+                name="search"
+                type="search"
+                id="default-search"
+                className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                placeholder="Search a country"
+                required
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
                 }}
-              >
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
+                value={searchValue}
+              />
+              {!!searchValue && (
+                <Button
+                  id="search-btn"
+                  variant={"outline"}
+                  type="button"
+                  className=" absolute end-2 top-1.5 h-10 w-10"
+                  onClick={() => {
+                    setSearchValue("");
+                  }}
                 >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 6l8 8m0-8l-8 8"
-                  />
-                </svg>
-              </Button>
-            )}
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 6l8 8m0-8l-8 8"
+                    />
+                  </svg>
+                </Button>
+              )}
+            </div>
+            <label>
+              <input
+                type="checkbox"
+                id="checkbox_independent"
+                ref={independentCheckboxRef}
+                onChange={applyCombinedFilters}
+                defaultChecked={true}
+              />
+              independent
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="checkbox_independent"
+                ref={notIndependentCheckboxRef}
+                onChange={applyCombinedFilters}
+                defaultChecked={true}
+              />
+              Not independent
+            </label>
           </form>
         }
       </Card>
       {loadingList ? (
         <p>{"loading list..."}</p>
-      ) : countryListToRender ? (
+      ) : countryFilteredList ? (
         <>
           <div id="country-list">
             <Table>
@@ -292,7 +335,7 @@ export function PointCountryInfo() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {countryListToRender.map((country, i) => {
+                {countryFilteredList.map((country, i) => {
                   const bg =
                     countryInfo?.name.common === country.name.common
                       ? "bg-gray-300"
