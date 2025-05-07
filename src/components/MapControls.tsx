@@ -28,9 +28,7 @@ export const MapControls = ({
     if (!selectedCountry) {
       countryPath = mapRef?.current;
     } else {
-      countryPath = mapRef?.current?.querySelector(
-        `[title="${selectedCountry}"]`
-      );
+      countryPath = mapRef?.current?.querySelector(`[id="${selectedCountry}"]`);
     }
 
     zoomToElement(countryPath);

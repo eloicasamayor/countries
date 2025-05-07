@@ -92,7 +92,7 @@ export function PointCountryInfo() {
     if (!country) {
       return;
     }
-    fetch(`https://restcountries.com/v3.1/name/${country}`)
+    fetch(`https://restcountries.com/v3.1/alpha/${country}`)
       .then((response) => response.json())
       // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
@@ -102,9 +102,8 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(`https://restcountries.com/v3.1/all?fields=name,capital`)
+    fetch(`https://restcountries.com/v3.1/all?fields=name,capital,cca2`)
       .then((response) => response.json())
-      // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
         console.log(data);
         setCountryList(data);
@@ -122,19 +121,18 @@ export function PointCountryInfo() {
   function onClickPais(e: MouseEvent) {
     const targ = e.target as SVGPathElement;
     selectedPath.current = targ;
-    const title = (targ.attributes.getNamedItem("title") as Attr).value;
+    const id = (targ.attributes.getNamedItem("id") as Attr).value;
 
-    if (!title || !targ) {
+    if (!targ || !id) {
       return;
     }
-    setCountry(title);
-    const countryRow = document.getElementById(`table-country-${title}`);
+    setCountry(id);
+    const countryRow = document.getElementById(`table-country-${id}`);
     countryRow?.scrollIntoView({
       behavior: "smooth",
       block: "center",
       inline: "nearest",
     });
-    console.log("hola");
   }
 
   const countryListToRender =
@@ -206,7 +204,7 @@ export function PointCountryInfo() {
               </Button>
             </div>
             <p>
-              <strong>{country}</strong>
+              <strong>{`${countryInfo.name.common} (${country})`}</strong>
               <br />
               {countryInfo.name.official}
               <br />
@@ -302,8 +300,8 @@ export function PointCountryInfo() {
                   return (
                     <TableRow
                       key={country.name.common}
-                      onClick={() => setCountry(country.name.common)}
-                      id={`table-country-${country.name.common}`}
+                      onClick={() => setCountry(country.cca2)}
+                      id={`table-country-${country.cca2}`}
                     >
                       <TableCell className={`font-medium ${bg}`}>
                         {i + 1}
