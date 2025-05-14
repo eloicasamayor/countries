@@ -82,6 +82,15 @@ export const ProjectInfo = () => {
                   mapsvg.com
                 </a>
               </li>
+              <li>
+                The area data comes from{" "}
+                <a
+                  className="underline text-black"
+                  href="https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area"
+                >
+                  Wikipedia
+                </a>
+              </li>
             </ul>
           </DialogDescription>
         </DialogHeader>

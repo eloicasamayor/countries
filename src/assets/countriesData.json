@@ -1,0 +1,2066 @@
+[
+  {
+    "CCA2": "RU",
+    "Country": "Russia",
+    "TotalArea_m2": 17098246000000,
+    "LandArea_m2": 16376870000000,
+    "WaterArea_m2": 721380000000,
+    "WaterPercentage": 4.2
+  },
+  {
+    "CCA2": "AQ",
+    "Country": "Antarctica",
+    "TotalArea_m2": 14200000000000,
+    "LandArea_m2": 14200000000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "CA",
+    "Country": "Canada",
+    "TotalArea_m2": 9984670000000,
+    "LandArea_m2": 9093507000000,
+    "WaterArea_m2": 891163000000,
+    "WaterPercentage": 8.9
+  },
+  {
+    "CCA2": "CN",
+    "Country": "China",
+    "TotalArea_m2": 9596960000000,
+    "LandArea_m2": 9326410000000,
+    "WaterArea_m2": 270550000000,
+    "WaterPercentage": 2.8
+  },
+  {
+    "CCA2": "US",
+    "Country": "United States",
+    "TotalArea_m2": 9525067000000,
+    "LandArea_m2": 9147593000000,
+    "WaterArea_m2": 377424000000,
+    "WaterPercentage": 4.0
+  },
+  {
+    "CCA2": "BR",
+    "Country": "Brazil",
+    "TotalArea_m2": 8510346000000,
+    "LandArea_m2": 8460415000000,
+    "WaterArea_m2": 55352000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "AU",
+    "Country": "Australia",
+    "TotalArea_m2": 7741220000000,
+    "LandArea_m2": 7682300000000,
+    "WaterArea_m2": 58920000000,
+    "WaterPercentage": 0.8
+  },
+  {
+    "CCA2": "IN",
+    "Country": "India",
+    "TotalArea_m2": 3287263000000,
+    "LandArea_m2": 2973190000000,
+    "WaterArea_m2": 314070000000,
+    "WaterPercentage": 9.6
+  },
+  {
+    "CCA2": "AR",
+    "Country": "Argentina",
+    "TotalArea_m2": 2780400000000,
+    "LandArea_m2": 2736690000000,
+    "WaterArea_m2": 43710000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "KZ",
+    "Country": "Kazakhstan",
+    "TotalArea_m2": 2724910000000,
+    "LandArea_m2": 2699700000000,
+    "WaterArea_m2": 25202000000,
+    "WaterPercentage": 0.9
+  },
+  {
+    "CCA2": "DZ",
+    "Country": "Algeria",
+    "TotalArea_m2": 2381741000000,
+    "LandArea_m2": 2381741000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "CD",
+    "Country": "Democratic Republic of the Congo",
+    "TotalArea_m2": 2344858000000,
+    "LandArea_m2": 2267048000000,
+    "WaterArea_m2": 77810000000,
+    "WaterPercentage": 3.3
+  },
+  {
+    "CCA2": "DK",
+    "Country": "Denmark",
+    "TotalArea_m2": 2210573000000,
+    "LandArea_m2": 2209913000000,
+    "WaterArea_m2": 660000000,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GL",
+    "Country": "Greenland",
+    "TotalArea_m2": 2166086000000,
+    "LandArea_m2": 2166086000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "SA",
+    "Country": "Saudi Arabia",
+    "TotalArea_m2": 2149690000000,
+    "LandArea_m2": 2149690000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MX",
+    "Country": "Mexico",
+    "TotalArea_m2": 1964375000000,
+    "LandArea_m2": 1943950000000,
+    "WaterArea_m2": 20425000000,
+    "WaterPercentage": 1.0
+  },
+  {
+    "CCA2": "ID",
+    "Country": "Indonesia",
+    "TotalArea_m2": 1904569000000,
+    "LandArea_m2": 1811569000000,
+    "WaterArea_m2": 93000000000,
+    "WaterPercentage": 4.9
+  },
+  {
+    "CCA2": "SD",
+    "Country": "Sudan",
+    "TotalArea_m2": 1861484000000,
+    "LandArea_m2": 1731671000000,
+    "WaterArea_m2": 129813000000,
+    "WaterPercentage": 7.0
+  },
+  {
+    "CCA2": "LY",
+    "Country": "Libya",
+    "TotalArea_m2": 1759540000000,
+    "LandArea_m2": 1759540000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "IR",
+    "Country": "Iran",
+    "TotalArea_m2": 1648195000000,
+    "LandArea_m2": 1531595000000,
+    "WaterArea_m2": 116600000000,
+    "WaterPercentage": 7.1
+  },
+  {
+    "CCA2": "MN",
+    "Country": "Mongolia",
+    "TotalArea_m2": 1564116000000,
+    "LandArea_m2": 1557507000000,
+    "WaterArea_m2": 6609000000,
+    "WaterPercentage": 0.4
+  },
+  {
+    "CCA2": "PE",
+    "Country": "Peru",
+    "TotalArea_m2": 1285216000000,
+    "LandArea_m2": 1279996000000,
+    "WaterArea_m2": 5220000000,
+    "WaterPercentage": 0.4
+  },
+  {
+    "CCA2": "TD",
+    "Country": "Chad",
+    "TotalArea_m2": 1284000000000,
+    "LandArea_m2": 1259200000000,
+    "WaterArea_m2": 24800000000,
+    "WaterPercentage": 1.9
+  },
+  {
+    "CCA2": "NE",
+    "Country": "Niger",
+    "TotalArea_m2": 1267000000000,
+    "LandArea_m2": 1266700000000,
+    "WaterArea_m2": 300000000,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AO",
+    "Country": "Angola",
+    "TotalArea_m2": 1246700000000,
+    "LandArea_m2": 1246700000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "ML",
+    "Country": "Mali",
+    "TotalArea_m2": 1240192000000,
+    "LandArea_m2": 1220190000000,
+    "WaterArea_m2": 20000000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "ZA",
+    "Country": "South Africa",
+    "TotalArea_m2": 1219090000000,
+    "LandArea_m2": 1214470000000,
+    "WaterArea_m2": 4620000000,
+    "WaterPercentage": 0.4
+  },
+  {
+    "CCA2": "CO",
+    "Country": "Colombia",
+    "TotalArea_m2": 1138910000000,
+    "LandArea_m2": 1038700000000,
+    "WaterArea_m2": 100210000000,
+    "WaterPercentage": 8.8
+  },
+  {
+    "CCA2": "ET",
+    "Country": "Ethiopia",
+    "TotalArea_m2": 1104300000000,
+    "LandArea_m2": 1096570000000,
+    "WaterArea_m2": 7730000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "BO",
+    "Country": "Bolivia",
+    "TotalArea_m2": 1098581000000,
+    "LandArea_m2": 1083300000000,
+    "WaterArea_m2": 15280000000,
+    "WaterPercentage": 1.4
+  },
+  {
+    "CCA2": "MR",
+    "Country": "Mauritania",
+    "TotalArea_m2": 1030700000000,
+    "LandArea_m2": 1030700000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "EG",
+    "Country": "Egypt",
+    "TotalArea_m2": 1001450000000,
+    "LandArea_m2": 995450000000,
+    "WaterArea_m2": 6000000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "TZ",
+    "Country": "Tanzania",
+    "TotalArea_m2": 947303000000,
+    "LandArea_m2": 885800000000,
+    "WaterArea_m2": 61500000000,
+    "WaterPercentage": 6.5
+  },
+  {
+    "CCA2": "NG",
+    "Country": "Nigeria",
+    "TotalArea_m2": 923768000000,
+    "LandArea_m2": 910770000000,
+    "WaterArea_m2": 13000000000,
+    "WaterPercentage": 1.4
+  },
+  {
+    "CCA2": "VE",
+    "Country": "Venezuela",
+    "TotalArea_m2": 912050000000,
+    "LandArea_m2": 882050000000,
+    "WaterArea_m2": 30000000000,
+    "WaterPercentage": 3.3
+  },
+  {
+    "CCA2": "PK",
+    "Country": "Pakistan",
+    "TotalArea_m2": 882363000000,
+    "LandArea_m2": 857143000000,
+    "WaterArea_m2": 25220000000,
+    "WaterPercentage": 2.9
+  },
+  {
+    "CCA2": "NA",
+    "Country": "Namibia",
+    "TotalArea_m2": 824292000000,
+    "LandArea_m2": 823290000000,
+    "WaterArea_m2": 1002000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "MZ",
+    "Country": "Mozambique",
+    "TotalArea_m2": 799380000000,
+    "LandArea_m2": 786380000000,
+    "WaterArea_m2": 13000000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "TR",
+    "Country": "Turkey",
+    "TotalArea_m2": 783562000000,
+    "LandArea_m2": 769632000000,
+    "WaterArea_m2": 13930000000,
+    "WaterPercentage": 1.8
+  },
+  {
+    "CCA2": "CL",
+    "Country": "Chile",
+    "TotalArea_m2": 756102000000,
+    "LandArea_m2": 743812000000,
+    "WaterArea_m2": 12290000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "ZM",
+    "Country": "Zambia",
+    "TotalArea_m2": 752612000000,
+    "LandArea_m2": 743390000000,
+    "WaterArea_m2": 9220000000,
+    "WaterPercentage": 1.2
+  },
+  {
+    "CCA2": "MM",
+    "Country": "Myanmar",
+    "TotalArea_m2": 676578000000,
+    "LandArea_m2": 653508000000,
+    "WaterArea_m2": 23070000000,
+    "WaterPercentage": 3.4
+  },
+  {
+    "CCA2": "AF",
+    "Country": "Afghanistan",
+    "TotalArea_m2": 652864000000,
+    "LandArea_m2": 652230000000,
+    "WaterArea_m2": 630000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "SS",
+    "Country": "South Sudan",
+    "TotalArea_m2": 644329000000,
+    "LandArea_m2": null,
+    "WaterArea_m2": null,
+    "WaterPercentage": null
+  },
+  {
+    "CCA2": "FR",
+    "Country": "France",
+    "TotalArea_m2": 643801000000,
+    "LandArea_m2": 640427000000,
+    "WaterArea_m2": 3374000000,
+    "WaterPercentage": 0.5
+  },
+  {
+    "CCA2": "SO",
+    "Country": "Somalia",
+    "TotalArea_m2": 637657000000,
+    "LandArea_m2": 627340000000,
+    "WaterArea_m2": 10320000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "CF",
+    "Country": "Central African Republic",
+    "TotalArea_m2": 622984000000,
+    "LandArea_m2": 622984000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "UA",
+    "Country": "Ukraine",
+    "TotalArea_m2": 603550000000,
+    "LandArea_m2": 579330000000,
+    "WaterArea_m2": 24220000000,
+    "WaterPercentage": 4.0
+  },
+  {
+    "CCA2": "MG",
+    "Country": "Madagascar",
+    "TotalArea_m2": 587041000000,
+    "LandArea_m2": 581540000000,
+    "WaterArea_m2": 5501000000,
+    "WaterPercentage": 0.9
+  },
+  {
+    "CCA2": "BW",
+    "Country": "Botswana",
+    "TotalArea_m2": 582000000000,
+    "LandArea_m2": 566730000000,
+    "WaterArea_m2": 15000000000,
+    "WaterPercentage": 2.6
+  },
+  {
+    "CCA2": "KE",
+    "Country": "Kenya",
+    "TotalArea_m2": 580367000000,
+    "LandArea_m2": 569140000000,
+    "WaterArea_m2": 11227000000,
+    "WaterPercentage": 1.9
+  },
+  {
+    "CCA2": "FR",
+    "Country": "France",
+    "TotalArea_m2": 551500000000,
+    "LandArea_m2": 549970000000,
+    "WaterArea_m2": 1530000000,
+    "WaterPercentage": 0.3
+  },
+  {
+    "CCA2": "TH",
+    "Country": "Thailand",
+    "TotalArea_m2": 513120000000,
+    "LandArea_m2": 510890000000,
+    "WaterArea_m2": 2230000000,
+    "WaterPercentage": 0.4
+  },
+  {
+    "CCA2": "ES",
+    "Country": "Spain",
+    "TotalArea_m2": 505370000000,
+    "LandArea_m2": 498980000000,
+    "WaterArea_m2": 6390000000,
+    "WaterPercentage": 1.3
+  },
+  {
+    "CCA2": "TM",
+    "Country": "Turkmenistan",
+    "TotalArea_m2": 488100000000,
+    "LandArea_m2": 469930000000,
+    "WaterArea_m2": 18170000000,
+    "WaterPercentage": 3.7
+  },
+  {
+    "CCA2": "CM",
+    "Country": "Cameroon",
+    "TotalArea_m2": 475650000000,
+    "LandArea_m2": 472710000000,
+    "WaterArea_m2": 2730000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "PG",
+    "Country": "Papua New Guinea",
+    "TotalArea_m2": 462840000000,
+    "LandArea_m2": 452860000000,
+    "WaterArea_m2": 9980000000,
+    "WaterPercentage": 2.2
+  },
+  {
+    "CCA2": "YE",
+    "Country": "Yemen",
+    "TotalArea_m2": 455503000000,
+    "LandArea_m2": 455503000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "SE",
+    "Country": "Sweden",
+    "TotalArea_m2": 450295000000,
+    "LandArea_m2": 407284000000,
+    "WaterArea_m2": 40142000000,
+    "WaterPercentage": 9.0
+  },
+  {
+    "CCA2": "UZ",
+    "Country": "Uzbekistan",
+    "TotalArea_m2": 447400000000,
+    "LandArea_m2": 425400000000,
+    "WaterArea_m2": 22000000000,
+    "WaterPercentage": 4.9
+  },
+  {
+    "CCA2": "MA",
+    "Country": "Morocco",
+    "TotalArea_m2": 446550000000,
+    "LandArea_m2": 446300000000,
+    "WaterArea_m2": 250000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "IQ",
+    "Country": "Iraq",
+    "TotalArea_m2": 438317000000,
+    "LandArea_m2": 437367000000,
+    "WaterArea_m2": 950000000,
+    "WaterPercentage": 0.2
+  },
+  {
+    "CCA2": "PY",
+    "Country": "Paraguay",
+    "TotalArea_m2": 406752000000,
+    "LandArea_m2": 397300000000,
+    "WaterArea_m2": 9452000000,
+    "WaterPercentage": 2.3
+  },
+  {
+    "CCA2": "ZW",
+    "Country": "Zimbabwe",
+    "TotalArea_m2": 390757000000,
+    "LandArea_m2": 386850000000,
+    "WaterArea_m2": 3910000000,
+    "WaterPercentage": 1.0
+  },
+  {
+    "CCA2": "NO",
+    "Country": "Norway",
+    "TotalArea_m2": 386224000000,
+    "LandArea_m2": 366704000000,
+    "WaterArea_m2": 19520000000,
+    "WaterPercentage": 5.1
+  },
+  {
+    "CCA2": "JP",
+    "Country": "Japan",
+    "TotalArea_m2": 377915000000,
+    "LandArea_m2": 364485000000,
+    "WaterArea_m2": 13430000000,
+    "WaterPercentage": 3.6
+  },
+  {
+    "CCA2": "DE",
+    "Country": "Germany",
+    "TotalArea_m2": 357581000000,
+    "LandArea_m2": 349390000000,
+    "WaterArea_m2": 7860000000,
+    "WaterPercentage": 2.2
+  },
+  {
+    "CCA2": "CG",
+    "Country": "Republic of the Congo",
+    "TotalArea_m2": 342000000000,
+    "LandArea_m2": 341500000000,
+    "WaterArea_m2": 500000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "FI",
+    "Country": "Finland",
+    "TotalArea_m2": 338145000000,
+    "LandArea_m2": 303815000000,
+    "WaterArea_m2": 34330000000,
+    "WaterPercentage": 10.2
+  },
+  {
+    "CCA2": "VN",
+    "Country": "Vietnam",
+    "TotalArea_m2": 331340000000,
+    "LandArea_m2": 313429000000,
+    "WaterArea_m2": 17801000000,
+    "WaterPercentage": 5.4
+  },
+  {
+    "CCA2": "MY",
+    "Country": "Malaysia",
+    "TotalArea_m2": 330621000000,
+    "LandArea_m2": 329432000000,
+    "WaterArea_m2": 1190000000,
+    "WaterPercentage": 0.4
+  },
+  {
+    "CCA2": "NO",
+    "Country": "Norway",
+    "TotalArea_m2": 323802000000,
+    "LandArea_m2": 304282000000,
+    "WaterArea_m2": 19520000000,
+    "WaterPercentage": 6.0
+  },
+  {
+    "CCA2": "CI",
+    "Country": "Ivory Coast",
+    "TotalArea_m2": 322462000000,
+    "LandArea_m2": 318000000000,
+    "WaterArea_m2": 4460000000,
+    "WaterPercentage": 1.4
+  },
+  {
+    "CCA2": "PL",
+    "Country": "Poland",
+    "TotalArea_m2": 312685000000,
+    "LandArea_m2": 304255000000,
+    "WaterArea_m2": 8430000000,
+    "WaterPercentage": 3.7
+  },
+  {
+    "CCA2": "OM",
+    "Country": "Oman",
+    "TotalArea_m2": 309500000000,
+    "LandArea_m2": 309500000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "IT",
+    "Country": "Italy",
+    "TotalArea_m2": 302068000000,
+    "LandArea_m2": 295717000000,
+    "WaterArea_m2": 6350000000,
+    "WaterPercentage": 2.1
+  },
+  {
+    "CCA2": "PH",
+    "Country": "Philippines",
+    "TotalArea_m2": 300000000000,
+    "LandArea_m2": 298170000000,
+    "WaterArea_m2": 1830000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "EC",
+    "Country": "Ecuador",
+    "TotalArea_m2": 283561000000,
+    "LandArea_m2": 276841000000,
+    "WaterArea_m2": 6720000000,
+    "WaterPercentage": 2.4
+  },
+  {
+    "CCA2": "BF",
+    "Country": "Burkina Faso",
+    "TotalArea_m2": 274200000000,
+    "LandArea_m2": 273800000000,
+    "WaterArea_m2": 400000000,
+    "WaterPercentage": 0.2
+  },
+  {
+    "CCA2": "NZ",
+    "Country": "New Zealand",
+    "TotalArea_m2": 268838000000,
+    "LandArea_m2": 264537000000,
+    "WaterArea_m2": 4301000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "GA",
+    "Country": "Gabon",
+    "TotalArea_m2": 267668000000,
+    "LandArea_m2": 257670000000,
+    "WaterArea_m2": 10000000000,
+    "WaterPercentage": 3.7
+  },
+  {
+    "CCA2": "EH",
+    "Country": "Western Sahara",
+    "TotalArea_m2": 266000000000,
+    "LandArea_m2": 266000000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GN",
+    "Country": "Guinea",
+    "TotalArea_m2": 245857000000,
+    "LandArea_m2": 245717000000,
+    "WaterArea_m2": 140000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "GB",
+    "Country": "United Kingdom",
+    "TotalArea_m2": 244376000000,
+    "LandArea_m2": 242741000000,
+    "WaterArea_m2": 1635000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "UG",
+    "Country": "Uganda",
+    "TotalArea_m2": 241550000000,
+    "LandArea_m2": 200520000000,
+    "WaterArea_m2": 41030000000,
+    "WaterPercentage": 17.0
+  },
+  {
+    "CCA2": "GH",
+    "Country": "Ghana",
+    "TotalArea_m2": 238537000000,
+    "LandArea_m2": 227533000000,
+    "WaterArea_m2": 11000000000,
+    "WaterPercentage": 4.6
+  },
+  {
+    "CCA2": "RO",
+    "Country": "Romania",
+    "TotalArea_m2": 238398000000,
+    "LandArea_m2": 230080000000,
+    "WaterArea_m2": 8320000000,
+    "WaterPercentage": 3.5
+  },
+  {
+    "CCA2": "LA",
+    "Country": "Laos",
+    "TotalArea_m2": 236800000000,
+    "LandArea_m2": 230800000000,
+    "WaterArea_m2": 6000000000,
+    "WaterPercentage": 2.5
+  },
+  {
+    "CCA2": "GY",
+    "Country": "Guyana",
+    "TotalArea_m2": 214969000000,
+    "LandArea_m2": 196850000000,
+    "WaterArea_m2": 18120000000,
+    "WaterPercentage": 8.4
+  },
+  {
+    "CCA2": "BY",
+    "Country": "Belarus",
+    "TotalArea_m2": 207600000000,
+    "LandArea_m2": 202900000000,
+    "WaterArea_m2": 4700000000,
+    "WaterPercentage": 2.3
+  },
+  {
+    "CCA2": "KG",
+    "Country": "Kyrgyzstan",
+    "TotalArea_m2": 199949000000,
+    "LandArea_m2": 191800000000,
+    "WaterArea_m2": 8150000000,
+    "WaterPercentage": 4.1
+  },
+  {
+    "CCA2": "SN",
+    "Country": "Senegal",
+    "TotalArea_m2": 196712000000,
+    "LandArea_m2": 192530000000,
+    "WaterArea_m2": 4180000000,
+    "WaterPercentage": 2.1
+  },
+  {
+    "CCA2": "SY",
+    "Country": "Syria",
+    "TotalArea_m2": 185180000000,
+    "LandArea_m2": 183630000000,
+    "WaterArea_m2": 1550000000,
+    "WaterPercentage": 0.8
+  },
+  {
+    "CCA2": "KH",
+    "Country": "Cambodia",
+    "TotalArea_m2": 181035000000,
+    "LandArea_m2": 176520000000,
+    "WaterArea_m2": 4520000000,
+    "WaterPercentage": 2.5
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Somaliland",
+    "TotalArea_m2": 177000000000,
+    "LandArea_m2": null,
+    "WaterArea_m2": null,
+    "WaterPercentage": null
+  },
+  {
+    "CCA2": "UY",
+    "Country": "Uruguay",
+    "TotalArea_m2": 176215000000,
+    "LandArea_m2": 175015000000,
+    "WaterArea_m2": 1200000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "SR",
+    "Country": "Suriname",
+    "TotalArea_m2": 163820000000,
+    "LandArea_m2": 156000000000,
+    "WaterArea_m2": 7820000000,
+    "WaterPercentage": 4.8
+  },
+  {
+    "CCA2": "TN",
+    "Country": "Tunisia",
+    "TotalArea_m2": 163610000000,
+    "LandArea_m2": 155360000000,
+    "WaterArea_m2": 8250000000,
+    "WaterPercentage": 5.0
+  },
+  {
+    "CCA2": "BD",
+    "Country": "Bangladesh",
+    "TotalArea_m2": 148460000000,
+    "LandArea_m2": 130170000000,
+    "WaterArea_m2": 18290000000,
+    "WaterPercentage": 12.3
+  },
+  {
+    "CCA2": "NP",
+    "Country": "Nepal",
+    "TotalArea_m2": 147181000000,
+    "LandArea_m2": 143350000000,
+    "WaterArea_m2": 3830000000,
+    "WaterPercentage": 2.6
+  },
+  {
+    "CCA2": "TJ",
+    "Country": "Tajikistan",
+    "TotalArea_m2": 144100000000,
+    "LandArea_m2": 141510000000,
+    "WaterArea_m2": 2590000000,
+    "WaterPercentage": 1.8
+  },
+  {
+    "CCA2": "GR",
+    "Country": "Greece",
+    "TotalArea_m2": 131957000000,
+    "LandArea_m2": 128900000000,
+    "WaterArea_m2": 1310000000,
+    "WaterPercentage": 2.3
+  },
+  {
+    "CCA2": "NI",
+    "Country": "Nicaragua",
+    "TotalArea_m2": 130373000000,
+    "LandArea_m2": 120340000000,
+    "WaterArea_m2": 10030000000,
+    "WaterPercentage": 7.7
+  },
+  {
+    "CCA2": "KP",
+    "Country": "North Korea",
+    "TotalArea_m2": 120538000000,
+    "LandArea_m2": 120410000000,
+    "WaterArea_m2": 130000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "MW",
+    "Country": "Malawi",
+    "TotalArea_m2": 118484000000,
+    "LandArea_m2": 94080000000,
+    "WaterArea_m2": 24404000000,
+    "WaterPercentage": 20.6
+  },
+  {
+    "CCA2": "ER",
+    "Country": "Eritrea",
+    "TotalArea_m2": 117600000000,
+    "LandArea_m2": 101000000000,
+    "WaterArea_m2": 16600000000,
+    "WaterPercentage": 14.1
+  },
+  {
+    "CCA2": "BJ",
+    "Country": "Benin",
+    "TotalArea_m2": 114763000000,
+    "LandArea_m2": 112760000000,
+    "WaterArea_m2": 2000000000,
+    "WaterPercentage": 1.7
+  },
+  {
+    "CCA2": "HN",
+    "Country": "Honduras",
+    "TotalArea_m2": 112492000000,
+    "LandArea_m2": 111890000000,
+    "WaterArea_m2": 600000000,
+    "WaterPercentage": 0.5
+  },
+  {
+    "CCA2": "LR",
+    "Country": "Liberia",
+    "TotalArea_m2": 111369000000,
+    "LandArea_m2": 96320000000,
+    "WaterArea_m2": 15049000000,
+    "WaterPercentage": 13.5
+  },
+  {
+    "CCA2": "BG",
+    "Country": "Bulgaria",
+    "TotalArea_m2": 110879000000,
+    "LandArea_m2": 108489000000,
+    "WaterArea_m2": 2390000000,
+    "WaterPercentage": 2.2
+  },
+  {
+    "CCA2": "CU",
+    "Country": "Cuba",
+    "TotalArea_m2": 109884000000,
+    "LandArea_m2": 103800000000,
+    "WaterArea_m2": 6080000000,
+    "WaterPercentage": 5.5
+  },
+  {
+    "CCA2": "GT",
+    "Country": "Guatemala",
+    "TotalArea_m2": 108889000000,
+    "LandArea_m2": 107160000000,
+    "WaterArea_m2": 1730000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "IS",
+    "Country": "Iceland",
+    "TotalArea_m2": 103000000000,
+    "LandArea_m2": 100830000000,
+    "WaterArea_m2": 2170000000,
+    "WaterPercentage": 2.1
+  },
+  {
+    "CCA2": "KR",
+    "Country": "South Korea",
+    "TotalArea_m2": 100432000000,
+    "LandArea_m2": 97600000000,
+    "WaterArea_m2": 2800000000,
+    "WaterPercentage": 2.8
+  },
+  {
+    "CCA2": "HU",
+    "Country": "Hungary",
+    "TotalArea_m2": 93025000000,
+    "LandArea_m2": 91260000000,
+    "WaterArea_m2": 1770000000,
+    "WaterPercentage": 1.9
+  },
+  {
+    "CCA2": "PT",
+    "Country": "Portugal",
+    "TotalArea_m2": 92225000000,
+    "LandArea_m2": 91606000000,
+    "WaterArea_m2": 620000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "JO",
+    "Country": "Jordan",
+    "TotalArea_m2": 89318000000,
+    "LandArea_m2": 88794000000,
+    "WaterArea_m2": 524000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "RS",
+    "Country": "Serbia",
+    "TotalArea_m2": 88499000000,
+    "LandArea_m2": 88499000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AZ",
+    "Country": "Azerbaijan",
+    "TotalArea_m2": 86600000000,
+    "LandArea_m2": 82650000000,
+    "WaterArea_m2": 3950000000,
+    "WaterPercentage": 4.6
+  },
+  {
+    "CCA2": "AT",
+    "Country": "Austria",
+    "TotalArea_m2": 83878000000,
+    "LandArea_m2": 82520000000,
+    "WaterArea_m2": 1359000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "AE",
+    "Country": "United Arab Emirates",
+    "TotalArea_m2": 83600000000,
+    "LandArea_m2": 82880000000,
+    "WaterArea_m2": 720000000,
+    "WaterPercentage": 0.9
+  },
+  {
+    "CCA2": "CZ",
+    "Country": "Czech Republic",
+    "TotalArea_m2": 78871000000,
+    "LandArea_m2": 77187000000,
+    "WaterArea_m2": 1684000000,
+    "WaterPercentage": 2.1
+  },
+  {
+    "CCA2": "PA",
+    "Country": "Panama",
+    "TotalArea_m2": 75320000000,
+    "LandArea_m2": 74180000000,
+    "WaterArea_m2": 1143000000,
+    "WaterPercentage": 1.5
+  },
+  {
+    "CCA2": "SL",
+    "Country": "Sierra Leone",
+    "TotalArea_m2": 72300000000,
+    "LandArea_m2": 72180000000,
+    "WaterArea_m2": 120000000,
+    "WaterPercentage": 0.2
+  },
+  {
+    "CCA2": "IE",
+    "Country": "Ireland",
+    "TotalArea_m2": 70273000000,
+    "LandArea_m2": 68883000000,
+    "WaterArea_m2": 1390000000,
+    "WaterPercentage": 2.0
+  },
+  {
+    "CCA2": "GE",
+    "Country": "Georgia",
+    "TotalArea_m2": 69700000000,
+    "LandArea_m2": 69490000000,
+    "WaterArea_m2": 210000000,
+    "WaterPercentage": 0.3
+  },
+  {
+    "CCA2": "LK",
+    "Country": "Sri Lanka",
+    "TotalArea_m2": 65610000000,
+    "LandArea_m2": 61860000000,
+    "WaterArea_m2": 3750000000,
+    "WaterPercentage": 5.7
+  },
+  {
+    "CCA2": "LT",
+    "Country": "Lithuania",
+    "TotalArea_m2": 65286000000,
+    "LandArea_m2": 62610000000,
+    "WaterArea_m2": 2680000000,
+    "WaterPercentage": 4.1
+  },
+  {
+    "CCA2": "LV",
+    "Country": "Latvia",
+    "TotalArea_m2": 64594000000,
+    "LandArea_m2": 62230000000,
+    "WaterArea_m2": 2370000000,
+    "WaterPercentage": 3.7
+  },
+  {
+    "CCA2": "SJ",
+    "Country": "Svalbard and Jan Mayen",
+    "TotalArea_m2": 439045000000,
+    "LandArea_m2": 439045000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "TG",
+    "Country": "Togo",
+    "TotalArea_m2": 56785000000,
+    "LandArea_m2": 54390000000,
+    "WaterArea_m2": 2400000000,
+    "WaterPercentage": 4.2
+  },
+  {
+    "CCA2": "HR",
+    "Country": "Croatia",
+    "TotalArea_m2": 56594000000,
+    "LandArea_m2": 55974000000,
+    "WaterArea_m2": 620000000,
+    "WaterPercentage": 1.1
+  },
+  {
+    "CCA2": "BA",
+    "Country": "Bosnia and Herzegovina",
+    "TotalArea_m2": 51209000000,
+    "LandArea_m2": 51200000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "CR",
+    "Country": "Costa Rica",
+    "TotalArea_m2": 51100000000,
+    "LandArea_m2": 51060000000,
+    "WaterArea_m2": 40000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "SK",
+    "Country": "Slovakia",
+    "TotalArea_m2": 49035000000,
+    "LandArea_m2": 48080000000,
+    "WaterArea_m2": 950000000,
+    "WaterPercentage": 1.9
+  },
+  {
+    "CCA2": "DO",
+    "Country": "Dominican Republic",
+    "TotalArea_m2": 48670000000,
+    "LandArea_m2": 48320000000,
+    "WaterArea_m2": 350000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "EE",
+    "Country": "Estonia",
+    "TotalArea_m2": 45339000000,
+    "LandArea_m2": 42388000000,
+    "WaterArea_m2": 2840000000,
+    "WaterPercentage": 6.3
+  },
+  {
+    "CCA2": "DK",
+    "Country": "Denmark",
+    "TotalArea_m2": 42947000000,
+    "LandArea_m2": 42434000000,
+    "WaterArea_m2": 660000000,
+    "WaterPercentage": 1.5
+  },
+  {
+    "CCA2": "NL",
+    "Country": "Netherlands",
+    "TotalArea_m2": 41865000000,
+    "LandArea_m2": 33893000000,
+    "WaterArea_m2": 7650000000,
+    "WaterPercentage": 19.0
+  },
+  {
+    "CCA2": "CH",
+    "Country": "Switzerland",
+    "TotalArea_m2": 41291000000,
+    "LandArea_m2": 39510000000,
+    "WaterArea_m2": 1781000000,
+    "WaterPercentage": 4.3
+  },
+  {
+    "CCA2": "BT",
+    "Country": "Bhutan",
+    "TotalArea_m2": 38394000000,
+    "LandArea_m2": 38140000000,
+    "WaterArea_m2": 250000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "GW",
+    "Country": "Guinea-Bissau",
+    "TotalArea_m2": 36125000000,
+    "LandArea_m2": 28120000000,
+    "WaterArea_m2": 8010000000,
+    "WaterPercentage": 22.2
+  },
+  {
+    "CCA2": "TW",
+    "Country": "Taiwan",
+    "TotalArea_m2": 35980000000,
+    "LandArea_m2": 32260000000,
+    "WaterArea_m2": 3720000000,
+    "WaterPercentage": 10.3
+  },
+  {
+    "CCA2": "MD",
+    "Country": "Moldova",
+    "TotalArea_m2": 33847000000,
+    "LandArea_m2": 32970000000,
+    "WaterArea_m2": 880000000,
+    "WaterPercentage": 2.6
+  },
+  {
+    "CCA2": "BE",
+    "Country": "Belgium",
+    "TotalArea_m2": 30528000000,
+    "LandArea_m2": 30280000000,
+    "WaterArea_m2": 250000000,
+    "WaterPercentage": 0.8
+  },
+  {
+    "CCA2": "LS",
+    "Country": "Lesotho",
+    "TotalArea_m2": 30355000000,
+    "LandArea_m2": 30355000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AM",
+    "Country": "Armenia",
+    "TotalArea_m2": 29743000000,
+    "LandArea_m2": 28470000000,
+    "WaterArea_m2": 1270000000,
+    "WaterPercentage": 4.3
+  },
+  {
+    "CCA2": "SB",
+    "Country": "Solomon Islands",
+    "TotalArea_m2": 28896000000,
+    "LandArea_m2": 27990000000,
+    "WaterArea_m2": 910000000,
+    "WaterPercentage": 3.1
+  },
+  {
+    "CCA2": "AL",
+    "Country": "Albania",
+    "TotalArea_m2": 28748000000,
+    "LandArea_m2": 27400000000,
+    "WaterArea_m2": 330000000,
+    "WaterPercentage": 1.1
+  },
+  {
+    "CCA2": "GQ",
+    "Country": "Equatorial Guinea",
+    "TotalArea_m2": 28051000000,
+    "LandArea_m2": 28051000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BI",
+    "Country": "Burundi",
+    "TotalArea_m2": 27834000000,
+    "LandArea_m2": 25680000000,
+    "WaterArea_m2": 2150000000,
+    "WaterPercentage": 7.7
+  },
+  {
+    "CCA2": "HT",
+    "Country": "Haiti",
+    "TotalArea_m2": 27750000000,
+    "LandArea_m2": 27560000000,
+    "WaterArea_m2": 190000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "RW",
+    "Country": "Rwanda",
+    "TotalArea_m2": 26338000000,
+    "LandArea_m2": 24670000000,
+    "WaterArea_m2": 1670000000,
+    "WaterPercentage": 6.3
+  },
+  {
+    "CCA2": "MK",
+    "Country": "North Macedonia",
+    "TotalArea_m2": 25713000000,
+    "LandArea_m2": 25220000000,
+    "WaterArea_m2": 490000000,
+    "WaterPercentage": 1.9
+  },
+  {
+    "CCA2": "DJ",
+    "Country": "Djibouti",
+    "TotalArea_m2": 23200000000,
+    "LandArea_m2": 23180000000,
+    "WaterArea_m2": 20000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "BZ",
+    "Country": "Belize",
+    "TotalArea_m2": 22965000000,
+    "LandArea_m2": 22810000000,
+    "WaterArea_m2": 160000000,
+    "WaterPercentage": 0.7
+  },
+  {
+    "CCA2": "IL",
+    "Country": "Israel",
+    "TotalArea_m2": 21937000000,
+    "LandArea_m2": 21497000000,
+    "WaterArea_m2": 440000000,
+    "WaterPercentage": 2.1
+  },
+  {
+    "CCA2": "SV",
+    "Country": "El Salvador",
+    "TotalArea_m2": 21041000000,
+    "LandArea_m2": 20720000000,
+    "WaterArea_m2": 320000000,
+    "WaterPercentage": 1.5
+  },
+  {
+    "CCA2": "SI",
+    "Country": "Slovenia",
+    "TotalArea_m2": 20273000000,
+    "LandArea_m2": 20151000000,
+    "WaterArea_m2": 122000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "NC",
+    "Country": "New Caledonia",
+    "TotalArea_m2": 18575000000,
+    "LandArea_m2": 18275000000,
+    "WaterArea_m2": 300000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "FJ",
+    "Country": "Fiji",
+    "TotalArea_m2": 18272000000,
+    "LandArea_m2": 18272000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "KW",
+    "Country": "Kuwait",
+    "TotalArea_m2": 17818000000,
+    "LandArea_m2": 17818000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "SZ",
+    "Country": "Eswatini",
+    "TotalArea_m2": 17363000000,
+    "LandArea_m2": 17200000000,
+    "WaterArea_m2": 160000000,
+    "WaterPercentage": 0.9
+  },
+  {
+    "CCA2": "TL",
+    "Country": "East Timor",
+    "TotalArea_m2": 14874000000,
+    "LandArea_m2": 14874000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BS",
+    "Country": "Bahamas",
+    "TotalArea_m2": 13880000000,
+    "LandArea_m2": 10010000000,
+    "WaterArea_m2": 3870000000,
+    "WaterPercentage": 27.8
+  },
+  {
+    "CCA2": "ME",
+    "Country": "Montenegro",
+    "TotalArea_m2": 13812000000,
+    "LandArea_m2": 13452000000,
+    "WaterArea_m2": 360000000,
+    "WaterPercentage": 2.6
+  },
+  {
+    "CCA2": "VU",
+    "Country": "Vanuatu",
+    "TotalArea_m2": 12189000000,
+    "LandArea_m2": 12189000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "FK",
+    "Country": "Falkland Islands",
+    "TotalArea_m2": 12173000000,
+    "LandArea_m2": 12173000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "QA",
+    "Country": "Qatar",
+    "TotalArea_m2": 11586000000,
+    "LandArea_m2": 11586000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GM",
+    "Country": "Gambia",
+    "TotalArea_m2": 11295000000,
+    "LandArea_m2": 10120000000,
+    "WaterArea_m2": 1180000000,
+    "WaterPercentage": 10.4
+  },
+  {
+    "CCA2": "JM",
+    "Country": "Jamaica",
+    "TotalArea_m2": 10991000000,
+    "LandArea_m2": 10830000000,
+    "WaterArea_m2": 160000000,
+    "WaterPercentage": 1.5
+  },
+  {
+    "CCA2": "XK",
+    "Country": "Kosovo",
+    "TotalArea_m2": 10887000000,
+    "LandArea_m2": 10887000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "LB",
+    "Country": "Lebanon",
+    "TotalArea_m2": 10452000000,
+    "LandArea_m2": 10230000000,
+    "WaterArea_m2": 220000000,
+    "WaterPercentage": 2.1
+  },
+  {
+    "CCA2": "CY",
+    "Country": "Cyprus",
+    "TotalArea_m2": 9251000000,
+    "LandArea_m2": 9241000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 0.1
+  },
+  {
+    "CCA2": "PR",
+    "Country": "Puerto Rico",
+    "TotalArea_m2": 9100000000,
+    "LandArea_m2": 8868000000,
+    "WaterArea_m2": 232000000,
+    "WaterPercentage": 2.5
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Abkhazia",
+    "TotalArea_m2": 8665000000,
+    "LandArea_m2": null,
+    "WaterArea_m2": null,
+    "WaterPercentage": null
+  },
+  {
+    "CCA2": "TF",
+    "Country": "French Southern Territories",
+    "TotalArea_m2": 7747000000,
+    "LandArea_m2": 7668000000,
+    "WaterArea_m2": 80000000,
+    "WaterPercentage": 1.0
+  },
+  {
+    "CCA2": "PS",
+    "Country": "Palestine",
+    "TotalArea_m2": 6020000000,
+    "LandArea_m2": 6025000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BN",
+    "Country": "Brunei",
+    "TotalArea_m2": 5765000000,
+    "LandArea_m2": 5270000000,
+    "WaterArea_m2": 500000000,
+    "WaterPercentage": 8.7
+  },
+  {
+    "CCA2": "TT",
+    "Country": "Trinidad and Tobago",
+    "TotalArea_m2": 5127000000,
+    "LandArea_m2": 5127000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "PF",
+    "Country": "French Polynesia",
+    "TotalArea_m2": 4167000000,
+    "LandArea_m2": 3827000000,
+    "WaterArea_m2": 340000000,
+    "WaterPercentage": 8.2
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Transnistria",
+    "TotalArea_m2": 4163000000,
+    "LandArea_m2": null,
+    "WaterArea_m2": null,
+    "WaterPercentage": null
+  },
+  {
+    "CCA2": "CV",
+    "Country": "Cape Verde",
+    "TotalArea_m2": 4033000000,
+    "LandArea_m2": 4033000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GS",
+    "Country": "South Georgia and the South Sandwich Islands",
+    "TotalArea_m2": 3903000000,
+    "LandArea_m2": 3903000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "South Ossetia",
+    "TotalArea_m2": 3900000000,
+    "LandArea_m2": null,
+    "WaterArea_m2": null,
+    "WaterPercentage": null
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Northern Cyprus",
+    "TotalArea_m2": 3355000000,
+    "LandArea_m2": null,
+    "WaterArea_m2": null,
+    "WaterPercentage": null
+  },
+  {
+    "CCA2": "WS",
+    "Country": "Samoa",
+    "TotalArea_m2": 2842000000,
+    "LandArea_m2": 2780000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 0.4
+  },
+  {
+    "CCA2": "LU",
+    "Country": "Luxembourg",
+    "TotalArea_m2": 2586000000,
+    "LandArea_m2": 2574000000,
+    "WaterArea_m2": 16000000,
+    "WaterPercentage": 0.6
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Bir Tawil (Terra nullius)",
+    "TotalArea_m2": 2060000000,
+    "LandArea_m2": 2060000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MU",
+    "Country": "Mauritius",
+    "TotalArea_m2": 2040000000,
+    "LandArea_m2": 2030000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 0.5
+  },
+  {
+    "CCA2": "KM",
+    "Country": "Comoros",
+    "TotalArea_m2": 1861000000,
+    "LandArea_m2": 1861000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AX",
+    "Country": "Åland",
+    "TotalArea_m2": 1581000000,
+    "LandArea_m2": 1553000000,
+    "WaterArea_m2": 28000000,
+    "WaterPercentage": 1.8
+  },
+  {
+    "CCA2": "FO",
+    "Country": "Faroe Islands",
+    "TotalArea_m2": 1393000000,
+    "LandArea_m2": 1393000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "HK",
+    "Country": "Hong Kong",
+    "TotalArea_m2": 1114000000,
+    "LandArea_m2": 1050000000,
+    "WaterArea_m2": 60000000,
+    "WaterPercentage": 5.4
+  },
+  {
+    "CCA2": "ST",
+    "Country": "São Tomé and Príncipe",
+    "TotalArea_m2": 964000000,
+    "LandArea_m2": 964000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "TC",
+    "Country": "Turks and Caicos Islands",
+    "TotalArea_m2": 948000000,
+    "LandArea_m2": 948000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "KI",
+    "Country": "Kiribati",
+    "TotalArea_m2": 811000000,
+    "LandArea_m2": 811000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BH",
+    "Country": "Bahrain",
+    "TotalArea_m2": 778000000,
+    "LandArea_m2": 778000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "DM",
+    "Country": "Dominica",
+    "TotalArea_m2": 750000000,
+    "LandArea_m2": 750000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "TO",
+    "Country": "Tonga",
+    "TotalArea_m2": 747000000,
+    "LandArea_m2": 720000000,
+    "WaterArea_m2": 30000000,
+    "WaterPercentage": 4.0
+  },
+  {
+    "CCA2": "SG",
+    "Country": "Singapore",
+    "TotalArea_m2": 736000000,
+    "LandArea_m2": 726000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 1.4
+  },
+  {
+    "CCA2": "FM",
+    "Country": "Micronesia",
+    "TotalArea_m2": 702000000,
+    "LandArea_m2": 700000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "LC",
+    "Country": "Saint Lucia",
+    "TotalArea_m2": 616000000,
+    "LandArea_m2": 610000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 1.6
+  },
+  {
+    "CCA2": "IM",
+    "Country": "Isle of Man",
+    "TotalArea_m2": 572000000,
+    "LandArea_m2": 570000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GU",
+    "Country": "Guam",
+    "TotalArea_m2": 541000000,
+    "LandArea_m2": 540000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AD",
+    "Country": "Andorra",
+    "TotalArea_m2": 468000000,
+    "LandArea_m2": 468000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "PW",
+    "Country": "Palau",
+    "TotalArea_m2": 459000000,
+    "LandArea_m2": 459000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MP",
+    "Country": "Northern Mariana Islands",
+    "TotalArea_m2": 457000000,
+    "LandArea_m2": 457000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "SC",
+    "Country": "Seychelles",
+    "TotalArea_m2": 457000000,
+    "LandArea_m2": 457000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "CW",
+    "Country": "Curaçao",
+    "TotalArea_m2": 444000000,
+    "LandArea_m2": 444000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AG",
+    "Country": "Antigua and Barbuda",
+    "TotalArea_m2": 442000000,
+    "LandArea_m2": 442000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BB",
+    "Country": "Barbados",
+    "TotalArea_m2": 431000000,
+    "LandArea_m2": 431000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "HM",
+    "Country": "Heard Island and McDonald Islands",
+    "TotalArea_m2": 412000000,
+    "LandArea_m2": 412000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "SH",
+    "Country": "Saint Helena, Ascension and Tristan da Cunha",
+    "TotalArea_m2": 394000000,
+    "LandArea_m2": 394000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "VC",
+    "Country": "Saint Vincent and the Grenadines",
+    "TotalArea_m2": 389000000,
+    "LandArea_m2": 389000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "VI",
+    "Country": "U.S. Virgin Islands",
+    "TotalArea_m2": 347000000,
+    "LandArea_m2": 347000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GD",
+    "Country": "Grenada",
+    "TotalArea_m2": 345000000,
+    "LandArea_m2": 340000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MT",
+    "Country": "Malta",
+    "TotalArea_m2": 315000000,
+    "LandArea_m2": 315000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MV",
+    "Country": "Maldives",
+    "TotalArea_m2": 300000000,
+    "LandArea_m2": 300000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BQ",
+    "Country": "Bonaire, Sint Eustatius and Saba (BES)",
+    "TotalArea_m2": 288000000,
+    "LandArea_m2": 288000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "KY",
+    "Country": "Cayman Islands",
+    "TotalArea_m2": 264000000,
+    "LandArea_m2": 240000000,
+    "WaterArea_m2": 24000000,
+    "WaterPercentage": 9.1
+  },
+  {
+    "CCA2": "KN",
+    "Country": "Saint Kitts and Nevis",
+    "TotalArea_m2": 261000000,
+    "LandArea_m2": 261000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "NU",
+    "Country": "Niue",
+    "TotalArea_m2": 260000000,
+    "LandArea_m2": 260000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "PM",
+    "Country": "Saint Pierre and Miquelon",
+    "TotalArea_m2": 242000000,
+    "LandArea_m2": 230000000,
+    "WaterArea_m2": 10000000,
+    "WaterPercentage": 4.2
+  },
+  {
+    "CCA2": "CK",
+    "Country": "Cook Islands",
+    "TotalArea_m2": 236000000,
+    "LandArea_m2": 236000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AS",
+    "Country": "American Samoa",
+    "TotalArea_m2": 199000000,
+    "LandArea_m2": 199000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MH",
+    "Country": "Marshall Islands",
+    "TotalArea_m2": 181000000,
+    "LandArea_m2": 180000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AW",
+    "Country": "Aruba",
+    "TotalArea_m2": 180000000,
+    "LandArea_m2": 180000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "LI",
+    "Country": "Liechtenstein",
+    "TotalArea_m2": 160000000,
+    "LandArea_m2": 160000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "VG",
+    "Country": "British Virgin Islands",
+    "TotalArea_m2": 151000000,
+    "LandArea_m2": 151000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "WF",
+    "Country": "Wallis and Futuna",
+    "TotalArea_m2": 142000000,
+    "LandArea_m2": 142000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "CX",
+    "Country": "Christmas Island",
+    "TotalArea_m2": 135000000,
+    "LandArea_m2": 135000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "JE",
+    "Country": "Jersey",
+    "TotalArea_m2": 116000000,
+    "LandArea_m2": 116000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MS",
+    "Country": "Montserrat",
+    "TotalArea_m2": 103000000,
+    "LandArea_m2": 100000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "AI",
+    "Country": "Anguilla",
+    "TotalArea_m2": 91000000,
+    "LandArea_m2": 91000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GG",
+    "Country": "Guernsey",
+    "TotalArea_m2": 78000000,
+    "LandArea_m2": 78000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "SM",
+    "Country": "San Marino",
+    "TotalArea_m2": 61000000,
+    "LandArea_m2": 61000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "IO",
+    "Country": "British Indian Ocean Territory",
+    "TotalArea_m2": 60000000,
+    "LandArea_m2": 60000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BM",
+    "Country": "Bermuda",
+    "TotalArea_m2": 54000000,
+    "LandArea_m2": 54000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MF",
+    "Country": "Saint Martin",
+    "TotalArea_m2": 53000000,
+    "LandArea_m2": 53000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BV",
+    "Country": "Bouvet Island",
+    "TotalArea_m2": 49000000,
+    "LandArea_m2": 49000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "PN",
+    "Country": "Pitcairn Islands",
+    "TotalArea_m2": 47000000,
+    "LandArea_m2": 47000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "NF",
+    "Country": "Norfolk Island",
+    "TotalArea_m2": 36000000,
+    "LandArea_m2": 36000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MF",
+    "Country": "Sint Maarten",
+    "TotalArea_m2": 34000000,
+    "LandArea_m2": 34000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "UM",
+    "Country": "U.S. Minor Outlying Islands",
+    "TotalArea_m2": 34000000,
+    "LandArea_m2": 34000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MO",
+    "Country": "Macau",
+    "TotalArea_m2": 33000000,
+    "LandArea_m2": 33000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "TV",
+    "Country": "Tuvalu",
+    "TotalArea_m2": 25000000,
+    "LandArea_m2": 25000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "BL",
+    "Country": "Saint Barthélemy",
+    "TotalArea_m2": 22000000,
+    "LandArea_m2": 20000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "NR",
+    "Country": "Nauru",
+    "TotalArea_m2": 21000000,
+    "LandArea_m2": 20000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "CC",
+    "Country": "Cocos Islands",
+    "TotalArea_m2": 14000000,
+    "LandArea_m2": 14000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "TK",
+    "Country": "Tokelau",
+    "TotalArea_m2": 12000000,
+    "LandArea_m2": 12000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "GI",
+    "Country": "Gibraltar",
+    "TotalArea_m2": 6800000,
+    "LandArea_m2": 6800000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Clipperton Island",
+    "TotalArea_m2": 6000000,
+    "LandArea_m2": 2000000,
+    "WaterArea_m2": 4000000,
+    "WaterPercentage": 66.7
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Ashmore and Cartier Islands",
+    "TotalArea_m2": 5000000,
+    "LandArea_m2": 5000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Coral Sea Islands",
+    "TotalArea_m2": 3000000,
+    "LandArea_m2": 3000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "N/A",
+    "Country": "Spratly Islands",
+    "TotalArea_m2": 2000000,
+    "LandArea_m2": 2000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "MC",
+    "Country": "Monaco",
+    "TotalArea_m2": 2000000,
+    "LandArea_m2": 2000000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  },
+  {
+    "CCA2": "VA",
+    "Country": "Vatican City",
+    "TotalArea_m2": 490000,
+    "LandArea_m2": 490000,
+    "WaterArea_m2": 0,
+    "WaterPercentage": 0.0
+  }
+]

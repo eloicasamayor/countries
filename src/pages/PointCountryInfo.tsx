@@ -17,16 +17,8 @@ import {
   unSecurityCouncil,
   unObservers,
 } from "../data/countries-data";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { ListFilter } from "lucide-react";
+import FiltersDialog from "@/components/FiltersDialog";
 
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
@@ -311,64 +303,13 @@ export function PointCountryInfo() {
                 </Button>
               )}
             </div>
-            <Dialog>
-              <DialogTrigger className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[>svg]:px-3">
-                <ListFilter />
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Filters</DialogTitle>
-                </DialogHeader>
-                <div className="items-top flex space-x-2">
-                  <Checkbox
-                    id="checkbox-independent"
-                    onCheckedChange={(e) => setIndependentChecked(e === true)}
-                    defaultChecked={true}
-                  />
-                  <div className="grid gap-1.5 leading-none">
-                    <label
-                      htmlFor="checkbox-independent"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
-                      Independent states
-                    </label>
-                    <p className="text-sm text-muted-foreground">
-                      Show independent states.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="text-left">
-                  <div className="items-top flex space-x-2">
-                    <Checkbox
-                      id="checkbox-not-independent"
-                      onCheckedChange={(e) =>
-                        setNotIndependentChecked(e === true)
-                      }
-                      defaultChecked={true}
-                    />
-                    <div className="grid gap-1.5 leading-none">
-                      <label
-                        htmlFor="checkbox-not-independent"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        Not independent states
-                      </label>
-                      <p className="text-sm text-muted-foreground">
-                        Show not independent states.
-                      </p>
-                    </div>
-                  </div>
-                  <br></br>
-                  {searchValue && (
-                    <label>
-                      Search query:
-                      <Input type="text" disabled defaultValue={searchValue} />
-                    </label>
-                  )}
-                </div>
-              </DialogContent>
-            </Dialog>
+            <FiltersDialog
+              searchValue={searchValue}
+              independentChecked={independentChecked}
+              setIndependentChecked={setIndependentChecked}
+              notIndependentChecked={notIndependentChecked}
+              setNotIndependentChecked={setNotIndependentChecked}
+            />
           </form>
         }
       </Card>
