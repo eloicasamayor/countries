@@ -3,9 +3,9 @@ export interface Country {
   commonName: string;
   area: {
     total_m2: number;
-    land_m2: number;
-    water_m2: number;
-    water_percentage: number;
+    land_m2: number | null;
+    water_m2: number | null;
+    water_percentage: number | null;
   };
   UN: {
     membership: boolean;
