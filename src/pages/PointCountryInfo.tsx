@@ -12,28 +12,13 @@ import {
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  unMembers,
-  unSecurityCouncil,
-  unObservers,
-} from "../data/countries-data";
 import { Input } from "@/components/ui/input";
 import FiltersDialog from "@/components/FiltersDialog";
 
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
   const [country, setCountry] = useState("");
-  type countryInfoT = {
-    capital: string;
-    languages: object;
-    flags: {
-      svg: string;
-    };
-    name: {
-      common: string;
-      official: string;
-    };
-  };
+
   type Country = {
     name: {
       common: string;
@@ -83,7 +68,7 @@ export function PointCountryInfo() {
       latlng: [number, number];
     };
   };
-  const [countryInfo, setCountryInfo] = useState<countryInfoT | undefined>();
+  const [countryInfo, setCountryInfo] = useState<Country | undefined>();
   const [countryList, setCountryList] = useState<Country[] | undefined>();
   const [countryFilteredList, setCountryFilteredList] = useState<
     Country[] | undefined
@@ -188,18 +173,21 @@ export function PointCountryInfo() {
     setCountryFilteredList(filteredCountries);
   };
 
-  const findCountryInUNMembers = (search: string) => {
-    const normalizedSearch = normalizeText(search);
-
-    return unMembers.find((entry) =>
-      normalizeText(entry.country).includes(normalizedSearch)
-    );
-  };
-
   useEffect(
     () => applyCombinedFilters(),
     [searchValue, independentChecked, notIndependentChecked]
   );
+
+  const littleCountryInfo = {
+    independent: countryInfo?.independent,
+    unMember: countryInfo?.unMember,
+    area: countryInfo?.area,
+    population: countryInfo?.population,
+    region: countryInfo?.region,
+    latlng: countryInfo?.latlng,
+    languages: countryInfo?.languages,
+    landLocked: countryInfo?.landlocked,
+  };
 
   return (
     <div className="flex flex-col lg:flex-row-reverse">
@@ -238,15 +226,16 @@ export function PointCountryInfo() {
               <strong>Capital:</strong> {countryInfo?.capital}
               <br />
               <strong>UN membership:</strong>{" "}
-              {findCountryInUNMembers(countryInfo.name.common)
-                ?.admission_date ?? "no"}
-              {unSecurityCouncil.includes(countryInfo.name.common)
-                ? " (Permanent member of the UN Security Council)"
-                : ""}
-              {unObservers.includes(countryInfo.name.common)
-                ? " (non-member observer)"
-                : ""}
+              {countryInfo?.unMember ? "Yes" : "No"}
               <br />
+              <details>
+                <pre className="text-[8px]/[8px]">
+                  {JSON.stringify(littleCountryInfo, null, 2).replace(
+                    /,/g,
+                    ",\n"
+                  )}
+                </pre>
+              </details>
             </p>
           </>
         )}
