@@ -83,7 +83,7 @@ export default function FiltersDialog({
         <div className="items-top flex space-x-2">
           <Checkbox
             id="area"
-            onCheckedChange={(e) => {}}
+            onCheckedChange={() => {}}
             defaultChecked={true}
           />
           <div className="grid gap-1.5 leading-none">
