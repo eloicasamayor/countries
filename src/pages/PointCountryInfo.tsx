@@ -15,59 +15,61 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import FiltersDialog from "@/components/FiltersDialog";
 
+type Country = {
+  name: {
+    common: string;
+    official: string;
+    nativeName: Record<string, { official: string; common: string }>;
+  };
+  tld: string[];
+  cca2: string;
+  ccn3: string;
+  cca3: string;
+  independent: boolean;
+  status: string;
+  unMember: boolean;
+  currencies: Record<string, { name: string; symbol: string }>;
+  idd: {
+    root: string;
+    suffixes: string[];
+  };
+  capital: string[];
+  altSpellings: string[];
+  region: string;
+  languages: Record<string, string>;
+  translations: Record<string, { official: string; common: string }>;
+  latlng: [number, number];
+  landlocked: boolean;
+  area: number;
+  demonyms: Record<string, { f: string; m: string }>;
+  flag: string;
+  maps: {
+    googleMaps: string;
+    openStreetMaps: string;
+  };
+  population: number;
+  car: {
+    signs: string[];
+    side: string;
+  };
+  timezones: string[];
+  continents: string[];
+  flags: {
+    png: string;
+    svg: string;
+  };
+  coatOfArms: Record<string, string>;
+  startOfWeek: string;
+  capitalInfo: {
+    latlng: [number, number];
+  };
+};
+
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
   const [country, setCountry] = useState("");
+  const [dataShownInTheTable, setDataShownInTheTable] = useState([]);
 
-  type Country = {
-    name: {
-      common: string;
-      official: string;
-      nativeName: Record<string, { official: string; common: string }>;
-    };
-    tld: string[];
-    cca2: string;
-    ccn3: string;
-    cca3: string;
-    independent: boolean;
-    status: string;
-    unMember: boolean;
-    currencies: Record<string, { name: string; symbol: string }>;
-    idd: {
-      root: string;
-      suffixes: string[];
-    };
-    capital: string[];
-    altSpellings: string[];
-    region: string;
-    languages: Record<string, string>;
-    translations: Record<string, { official: string; common: string }>;
-    latlng: [number, number];
-    landlocked: boolean;
-    area: number;
-    demonyms: Record<string, { f: string; m: string }>;
-    flag: string;
-    maps: {
-      googleMaps: string;
-      openStreetMaps: string;
-    };
-    population: number;
-    car: {
-      signs: string[];
-      side: string;
-    };
-    timezones: string[];
-    continents: string[];
-    flags: {
-      png: string;
-      svg: string;
-    };
-    coatOfArms: Record<string, string>;
-    startOfWeek: string;
-    capitalInfo: {
-      latlng: [number, number];
-    };
-  };
   const [countryInfo, setCountryInfo] = useState<Country | undefined>();
   const [countryList, setCountryList] = useState<Country[] | undefined>();
   const [countryFilteredList, setCountryFilteredList] = useState<
@@ -78,6 +80,10 @@ export function PointCountryInfo() {
 
   const [independentChecked, setIndependentChecked] = useState(true);
   const [notIndependentChecked, setNotIndependentChecked] = useState(true);
+
+  useEffect(() => {
+    console.log("dataShownInTheTable", dataShownInTheTable);
+  }, [dataShownInTheTable]);
 
   useEffect(() => {
     if (!country) {
@@ -93,9 +99,7 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(
-      `https://restcountries.com/v3.1/all?fields=name,capital,cca2,independent`
-    )
+    fetch(`https://restcountries.com/v3.1/all`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -298,6 +302,8 @@ export function PointCountryInfo() {
               setIndependentChecked={setIndependentChecked}
               notIndependentChecked={notIndependentChecked}
               setNotIndependentChecked={setNotIndependentChecked}
+              dataShownInTheTable={dataShownInTheTable}
+              setDataShownInTheTable={setDataShownInTheTable}
             />
           </form>
         }
@@ -312,32 +318,50 @@ export function PointCountryInfo() {
                 <TableRow>
                   <TableHead className="w-[100px]">#</TableHead>
                   <TableHead className="max-w-10">Country name</TableHead>
-                  <TableHead>Capital</TableHead>
+                  <TableHead className="max-w-10">Capital</TableHead>
+                  {dataShownInTheTable.length ? (
+                    dataShownInTheTable.map((attribute) => (
+                      <TableHead className="max-w-10 min-w-5">
+                        {attribute.length > 7
+                          ? attribute.substring(0, 5) + "."
+                          : attribute}
+                      </TableHead>
+                    ))
+                  ) : (
+                    <></>
+                  )}
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {countryFilteredList.map((country, i) => {
+                {countryFilteredList.map((itemData, i) => {
                   const bg =
-                    countryInfo?.name.common === country.name.common
+                    countryInfo?.name.common === itemData.name.common
                       ? "bg-gray-300"
                       : "";
                   return (
                     <TableRow
-                      key={country.name.common}
-                      onClick={() => setCountry(country.cca2)}
-                      id={`table-country-${country.cca2}`}
+                      key={itemData.name.common}
+                      onClick={() => setCountry(itemData.cca2)}
+                      id={`table-country-${itemData.cca2}`}
                     >
                       <TableCell className={`font-medium ${bg}`}>
                         {i + 1}
                       </TableCell>
                       <TableCell className={`${bg}`}>
-                        {country.name.common.length > 22
-                          ? country.name.common.substring(0, 22) + "..."
-                          : country.name.common}
+                        {itemData.name.common.length > 22
+                          ? itemData.name.common.substring(0, 22) + "..."
+                          : itemData.name.common}
                       </TableCell>
                       <TableCell className={`${bg}`}>
-                        {country.capital}
+                        {itemData.capital}
                       </TableCell>
+                      {dataShownInTheTable.map((attribute) => (
+                        <TableCell className={`${bg}`}>
+                          {typeof itemData[attribute] === "string"
+                            ? itemData[attribute]
+                            : itemData[attribute]?.toString()}
+                        </TableCell>
+                      ))}
                     </TableRow>
                   );
                 })}

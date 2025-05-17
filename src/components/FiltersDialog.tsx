@@ -8,6 +8,17 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "./ui/input";
+import { Dispatch, SetStateAction } from "react";
+
+const availableCountryData = [
+  { name: "cca2", description: "Two-letter country code" },
+  { name: "ccn3", description: "Three-digit country code" },
+  { name: "cca3", description: "Three-letter country code" },
+  { name: "independent", description: "Independent state" },
+  { name: "status", description: "Status of the country" },
+  { name: "unMember", description: "United Nations member" },
+  { name: "region", description: "Region of the country" },
+];
 
 export default function FiltersDialog({
   searchValue,
@@ -15,12 +26,16 @@ export default function FiltersDialog({
   setIndependentChecked,
   notIndependentChecked,
   setNotIndependentChecked,
+  dataShownInTheTable,
+  setDataShownInTheTable,
 }: {
   searchValue: string;
   independentChecked: boolean;
   setIndependentChecked: (value: boolean) => void;
   notIndependentChecked: boolean;
   setNotIndependentChecked: (value: boolean) => void;
+  dataShownInTheTable: string[];
+  setDataShownInTheTable: Dispatch<SetStateAction<string[]>>;
 }) {
   return (
     <Dialog>
@@ -80,24 +95,36 @@ export default function FiltersDialog({
         <DialogHeader>
           <DialogTitle>Filter countries data</DialogTitle>
         </DialogHeader>
-        <div className="items-top flex space-x-2">
-          <Checkbox
-            id="area"
-            onCheckedChange={() => {}}
-            defaultChecked={true}
-          />
-          <div className="grid gap-1.5 leading-none">
-            <label
-              htmlFor="area"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              Area
-            </label>
-            <p className="text-sm text-muted-foreground">
-              Show area of each country (in m<sup>2</sup>).
-            </p>
+        {availableCountryData.map((countryAttribute) => (
+          <div className="items-top flex space-x-2">
+            <Checkbox
+              id={countryAttribute.name}
+              onCheckedChange={(e) => {
+                setDataShownInTheTable((prev: string[]) => {
+                  if (e === true) {
+                    return [...prev, countryAttribute.name];
+                  } else {
+                    return prev.filter(
+                      (item: string) => item !== countryAttribute.name
+                    );
+                  }
+                });
+              }}
+              checked={dataShownInTheTable.includes(countryAttribute.name)}
+            />
+            <div className="grid gap-1.5 leading-none">
+              <label
+                htmlFor={countryAttribute.name}
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                {countryAttribute.name}
+              </label>
+              <p className="text-sm text-muted-foreground">
+                {countryAttribute.description}
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
       </DialogContent>
     </Dialog>
   );
