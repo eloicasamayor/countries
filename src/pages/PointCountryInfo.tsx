@@ -68,7 +68,7 @@ type Country = {
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
   const [country, setCountry] = useState("");
-  const [dataShownInTheTable, setDataShownInTheTable] = useState([]);
+  const [dataShownInTheTable, setDataShownInTheTable] = useState<string[]>([]);
 
   const [countryInfo, setCountryInfo] = useState<Country | undefined>();
   const [countryList, setCountryList] = useState<Country[] | undefined>();
@@ -320,8 +320,8 @@ export function PointCountryInfo() {
                   <TableHead className="max-w-10">Country name</TableHead>
                   <TableHead className="max-w-10">Capital</TableHead>
                   {dataShownInTheTable.length ? (
-                    dataShownInTheTable.map((attribute) => (
-                      <TableHead className="max-w-10 min-w-5">
+                    dataShownInTheTable.map((attribute: string) => (
+                      <TableHead className="max-w-10 min-w-6">
                         {attribute.length > 7
                           ? attribute.substring(0, 5) + "."
                           : attribute}
@@ -355,11 +355,9 @@ export function PointCountryInfo() {
                       <TableCell className={`${bg}`}>
                         {itemData.capital}
                       </TableCell>
-                      {dataShownInTheTable.map((attribute) => (
+                      {dataShownInTheTable.map((attribute: string) => (
                         <TableCell className={`${bg}`}>
-                          {typeof itemData[attribute] === "string"
-                            ? itemData[attribute]
-                            : itemData[attribute]?.toString()}
+                          {itemData[attribute as keyof Country]?.toString()}
                         </TableCell>
                       ))}
                     </TableRow>
