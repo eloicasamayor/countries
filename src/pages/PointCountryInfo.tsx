@@ -2,14 +2,6 @@
 import { Map } from "../assets/Map";
 import "../App.css";
 import { useEffect, useRef, useState } from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import { ProjectInfo } from "@/components/ProjectInfo";
 import { Country } from "../types/Country";
