@@ -46,7 +46,6 @@ export const Map = ({
 
   return (
     <>
-      {<ProjectInfo />}
       <div className="map-container fixed left-0 top-0 bg-white z-10">
         <TransformWrapper ref={ref} maxScale={MAX_SCALE} onZoom={onZoom}>
           {({ zoomIn, zoomOut, resetTransform, zoomToElement, ...rest }) => (
