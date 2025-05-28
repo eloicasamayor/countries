@@ -22,7 +22,7 @@ export const CountriesTable = ({
   setCountry,
 }: CountriesTableProps) => {
   return (
-    <div id="country-list">
+    <div id="country-list" className="lg:w-[500px] xl:w-[600px] 2xl:w-[700px]">
       <Table>
         <TableHeader>
           <TableRow>
