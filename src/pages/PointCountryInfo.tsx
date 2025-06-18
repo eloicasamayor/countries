@@ -42,7 +42,7 @@ export function PointCountryInfo() {
 
   useEffect(() => {
     setLoadingList(true);
-    fetch(`https://restcountries.com/v3.1/all`)
+    fetch(`https://restcountries.com/v3.1/all?fields=capital,region,independent,unMember,name,cca2,cca3,ccn3`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

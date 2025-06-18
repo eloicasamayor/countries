@@ -15,7 +15,6 @@ const availableCountryData = [
   { name: "ccn3", description: "Three-digit country code" },
   { name: "cca3", description: "Three-letter country code" },
   { name: "independent", description: "Independent state" },
-  { name: "status", description: "Status of the country" },
   { name: "unMember", description: "United Nations member" },
   { name: "region", description: "Region of the country" },
 ];
