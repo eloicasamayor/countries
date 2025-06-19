@@ -8,6 +8,7 @@ import { Country } from "../types/Country";
 import { CountryInfoCard } from "@/components/CountryInfoCard";
 import { CountrySearch } from "@/components/CountrySearch";
 import { CountriesTable } from "@/components/CountriesTable";
+import { LoadingTable } from "@/components/LoadingTable";
 
 export function PointCountryInfo() {
   const selectedPath = useRef<SVGPathElement | null>(null);
@@ -168,7 +169,7 @@ export function PointCountryInfo() {
           }
         </Card>
         {loadingList ? (
-          <p>{"loading list..."}</p>
+          <LoadingTable />
         ) : countryFilteredList ? (
           <CountriesTable
             dataShownInTheTable={dataShownInTheTable}
